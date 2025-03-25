@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+/*lite ändringar för att test xcode och githiub*/
 enum DictionaryType{
     case simple
     case computer
