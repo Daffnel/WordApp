@@ -19,11 +19,11 @@ class GameViewController: UIViewController {
     var question: String = ""
     var rightanswer: String = ""
     var points: Int = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-                
+        
+        
         answerLabel.becomeFirstResponder()
         
         randomWord()
@@ -54,9 +54,9 @@ class GameViewController: UIViewController {
         questionLabel.text = question
         
     }
-
     
-
+    
+    
     func makeGuess(){
         if answerLabel.text == rightanswer {
             print("Rätt!")
@@ -70,12 +70,15 @@ class GameViewController: UIViewController {
     }
     
     func countdown(){
-        for i in 0 ... 10 {
-            print("i")
+        let totalTime = 10
+        for i in 0...totalTime {
+            Timer.scheduledTimer(withTimeInterval: Double(i), repeats: false) { timer in
+                self.timerLabel.text = String(totalTime - i)
+            }
+            
         }
+        
         
     }
     
-
 }
-
