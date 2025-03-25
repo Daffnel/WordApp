@@ -1,0 +1,24 @@
+ [
+    {"english": "tree", "swedish": "träd"},
+    {"english": "river", "swedish": "flod"},
+    {"english": "mountain", "swedish": "berg"},
+    {"english": "lake", "swedish": "sjö"},
+    {"english": "ocean", "swedish": "hav"},
+    {"english": "forest", "swedish": "skog"},
+    {"english": "flower", "swedish": "blomma"},
+    {"english": "grass", "swedish": "gräs"},
+    {"english": "rock", "swedish": "sten"},
+    {"english": "island", "swedish": "ö"},
+    {"english": "beach", "swedish": "strand"},
+    {"english": "desert", "swedish": "öken"},
+    {"english": "waterfall", "swedish": "vattenfall"},
+    {"english": "cave", "swedish": "grotta"},
+    {"english": "valley", "swedish": "dal"},
+    {"english": "hill", "swedish": "kulle"},
+    {"english": "cloud", "swedish": "moln"},
+    {"english": "rain", "swedish": "regn"},
+    {"english": "snow", "swedish": "snö"},
+    {"english": "wind", "swedish": "vind"}
+  ]
+
+

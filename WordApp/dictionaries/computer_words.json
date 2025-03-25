@@ -1,0 +1,38 @@
+
+ [
+    {"english": "computer","swedish": "dator"},
+    {"english": "keyboard", "swedish": "tangentbord"},
+    {"english": "mouse", "swedish": "mus"},
+    {"english": "monitor", "swedish": "skärm"},
+    {"english": "printer", "swedish": "skrivare"},
+    {"english": "processor", "swedish": "processor"},
+    {"english": "memory", "swedish": "minne"},
+    {"english": "hard drive", "swedish": "hårddisk"},
+    {"english": "solid state drive", "swedish": "SSD-disk"},
+    {"english": "graphics card", "swedish": "grafikkort"},
+    {"english": "motherboard", "swedish": "moderkort"},
+    {"english": "operating system", "swedish": "operativsystem"},
+    {"english": "software", "swedish": "mjukvara"},
+    {"english": "hardware", "swedish": "hårdvara"},
+    {"english": "network", "swedish": "nätverk"},
+    {"english": "internet", "swedish": "internet"},
+    {"english": "firewall", "swedish": "brandvägg"},
+    {"english": "router", "swedish": "router"},
+    {"english": "server", "swedish": "server"},
+    {"english": "database", "swedish": "databas"},
+    {"english": "encryption", "swedish": "kryptering"},
+    {"english": "cloud computing", "swedish": "molntjänster"},
+    {"english": "virtual machine", "swedish": "virtuell maskin"},
+    {"english": "algorithm", "swedish": "algoritm"},
+    {"english": "binary code", "swedish": "binärkod"},
+    {"english": "compiler", "swedish": "kompilator"},
+    {"english": "debugging", "swedish": "felsökning"},
+    {"english": "script", "swedish": "skript"},
+    {"english": "syntax", "swedish": "syntax"},
+    {"english": "API", "swedish": "API"},
+    {"english": "framework", "swedish": "ramverk"},
+    {"english": "library", "swedish": "bibliotek"},
+    {"english": "open source", "swedish": "öppen källkod"}
+  ]
+
+
