@@ -13,6 +13,9 @@
 		87CEEFD82D91D8B700A7FBAC /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CEEFD72D91D8B700A7FBAC /* Dictionary.swift */; };
 		87CEEFDA2D92102900A7FBAC /* computer_words.json in Resources */ = {isa = PBXBuildFile; fileRef = 87CEEFD92D92101000A7FBAC /* computer_words.json */; };
 		87CEEFDC2D92181900A7FBAC /* nature.json in Resources */ = {isa = PBXBuildFile; fileRef = 87CEEFDB2D92180C00A7FBAC /* nature.json */; };
+		8DA8F0442D92B26C00FD4CDC /* WordApp-loggo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8F0432D92B26C00FD4CDC /* WordApp-loggo.png */; };
+		8DA8F0462D92C03800FD4CDC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8F0452D92C03800FD4CDC /* AboutViewController.swift */; };
+		8DA8F0482D92D21300FD4CDC /* button-click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8F0472D92D21300FD4CDC /* button-click.mp3 */; };
 		A4DAAAED2D9195BB00BC56D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAAAEC2D9195BB00BC56D3 /* AppDelegate.swift */; };
 		A4DAAAEF2D9195BB00BC56D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAAAEE2D9195BB00BC56D3 /* SceneDelegate.swift */; };
 		A4DAAAF12D9195BB00BC56D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DAAAF02D9195BB00BC56D3 /* ViewController.swift */; };
@@ -28,6 +31,9 @@
 		87CEEFD72D91D8B700A7FBAC /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		87CEEFD92D92101000A7FBAC /* computer_words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = computer_words.json; sourceTree = "<group>"; };
 		87CEEFDB2D92180C00A7FBAC /* nature.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nature.json; sourceTree = "<group>"; };
+		8DA8F0432D92B26C00FD4CDC /* WordApp-loggo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WordApp-loggo.png"; sourceTree = "<group>"; };
+		8DA8F0452D92C03800FD4CDC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		8DA8F0472D92D21300FD4CDC /* button-click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-click.mp3"; sourceTree = "<group>"; };
 		A4DAAAE92D9195BB00BC56D3 /* WordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DAAAEC2D9195BB00BC56D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DAAAEE2D9195BB00BC56D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,7 @@
 				87CEEFDB2D92180C00A7FBAC /* nature.json */,
 				87CEEFD92D92101000A7FBAC /* computer_words.json */,
 				87CEEFD52D91D87E00A7FBAC /* word.json */,
+				8DA8F0452D92C03800FD4CDC /* AboutViewController.swift */,
 			);
 			path = dictionaries;
 			sourceTree = "<group>";
@@ -89,6 +96,8 @@
 				A4DAAAF52D9195BC00BC56D3 /* Assets.xcassets */,
 				A4DAAAF72D9195BC00BC56D3 /* LaunchScreen.storyboard */,
 				A4DAAAFA2D9195BC00BC56D3 /* Info.plist */,
+				8DA8F0432D92B26C00FD4CDC /* WordApp-loggo.png */,
+				8DA8F0472D92D21300FD4CDC /* button-click.mp3 */,
 			);
 			path = WordApp;
 			sourceTree = "<group>";
@@ -154,8 +163,10 @@
 				A4DAAAF92D9195BC00BC56D3 /* LaunchScreen.storyboard in Resources */,
 				87CEEFD62D91D88900A7FBAC /* word.json in Resources */,
 				A4DAAAF62D9195BC00BC56D3 /* Assets.xcassets in Resources */,
+				8DA8F0482D92D21300FD4CDC /* button-click.mp3 in Resources */,
 				876B61CC2D921ADD00D0A2AD /* sailing.json in Resources */,
 				87CEEFDA2D92102900A7FBAC /* computer_words.json in Resources */,
+				8DA8F0442D92B26C00FD4CDC /* WordApp-loggo.png in Resources */,
 				87CEEFDC2D92181900A7FBAC /* nature.json in Resources */,
 				A4DAAAF42D9195BB00BC56D3 /* Main.storyboard in Resources */,
 				876B61CA2D9219F300D0A2AD /* cooking.json in Resources */,
@@ -172,6 +183,7 @@
 				A4DAAAF12D9195BB00BC56D3 /* ViewController.swift in Sources */,
 				87CEEFD82D91D8B700A7FBAC /* Dictionary.swift in Sources */,
 				A4DAAAED2D9195BB00BC56D3 /* AppDelegate.swift in Sources */,
+				8DA8F0462D92C03800FD4CDC /* AboutViewController.swift in Sources */,
 				A4DAAAEF2D9195BB00BC56D3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
