@@ -7,7 +7,7 @@
 
 import Foundation
 
-/*lite ändringar för att test xcode och githiub*/
+/*Här kommer mer text för att prova git och GitHub med Xcode*/
 enum DictionaryType{
     case simple
     case computer
