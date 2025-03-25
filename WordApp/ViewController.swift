@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
     @IBOutlet weak var swedenFlag: UILabel!
    
     @IBOutlet weak var englishFlag: UILabel!
@@ -33,6 +34,31 @@ class ViewController: UIViewController {
 
    
   
+
+    @IBOutlet var englishWordLabel: UITextField!
+    @IBOutlet var button: UIButton!
+
+    var  words = EnglishAndSwedishWord()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func buttonClick(_ sender: Any) {
+        
+       
+        
+        let dictionaryType = DictionaryType.sailing
+        let displayWord = words.getRandomEnglishWord(dictionaryType)
+       
+        
+        
+        englishWordLabel.text =  displayWord?.english
+        
+    }
+
     
 }
 
