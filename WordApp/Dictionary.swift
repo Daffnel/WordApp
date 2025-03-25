@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 enum DictionaryType{
     case simple
     case computer
@@ -76,3 +77,4 @@ struct EnglishAndSwedishWord: Decodable{   //Decodable protokoll för JSON Hante
        
     }
 }
+
