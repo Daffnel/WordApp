@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       // playSound(named: "clock-ticking",loops: -1)
         
         answerLabel.becomeFirstResponder()
         
@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        playSound()
+        playSound(named: "button-click")
         
         makeGuess()
         answerLabel.text = ""
@@ -76,6 +76,7 @@ class GameViewController: UIViewController {
             
         } else {
             print("Fel")
+            playSound(named: "clock-ticking", loops: -1)
         }
     }
     
@@ -83,25 +84,24 @@ class GameViewController: UIViewController {
      timer?.invalidate() // Stop previus timer
      totalTime = 10
      timerLabel.text = String(totalTime)
-     
+        
+     playSound(named: "clock-ticking",loops: -1) // play sound in loop
+        
      timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
          self.totalTime -= 1
          self.timerLabel.text = String(self.totalTime)
          
          if self.totalTime <= 0 {
-             timer.invalidate() // Stop timer
-             self.gameOver(DidLose: true) // Games over when time runs out
+            self.stopTickingSound() // stop loop and play times up sound
+            self.playSound(named: "times-up")
+            timer.invalidate()// Stop timer
+            self.gameOver(DidLose: true) // Games over when time runs out
          }
      }
     }
-  
-    
-    @IBAction func playAgainButton(_ sender: UIButton) {
-        restartGame()
-    }
     
     @IBAction func buttonhighScorepressed(_ sender: Any) {
-        
+        playSound(named: "button-click")
        if let highScoreVC = storyboard?.instantiateViewController(withIdentifier: "highScoreViewController") {
             highScoreVC.modalPresentationStyle = .fullScreen
             present(highScoreVC, animated: true, completion: nil)
@@ -109,53 +109,50 @@ class GameViewController: UIViewController {
         }  
     }
     
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
+    func playSound(named soundName: String, loops: Int = 0) {
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
             print(" No sound found ")
             return
         }
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.numberOfLoops = loops
             audioPlayer?.play()
         }catch let error {
             print("Faild to play sound: \(error) ")
         }
     }
-    
-    func gameOverPopUp(isGameOver: Bool){
-        let alertTitle = isGameOver ? "Game Over " : "Times up!"
-        let alertMessage = isGameOver ? "Better luck next Time! ": "You got \(points) points!"
-        
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        
-        let actionTitle = isGameOver ? "OK" : "Play again"
-        
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
-            
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
+  
+    func stopTickingSound(){
+        audioPlayer?.stop()
+        audioPlayer = nil
     }
-    
-    func goToStartScreen(){
-        if let startVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller"){
-            startVC.modalPresentationStyle = .fullScreen
-            present(startVC, animated: true, completion: nil)
-        }
-           
-    }
+  
     func restartGame(){
         pointsLabel.text = "0"
         randomWord()
         countdown()
-        
     }
+    
     func gameOver(DidLose: Bool){
         if DidLose{
+
             gameOverPopUp(isGameOver: true)
             HighScoreFunctions.writeToHighScoreList(score: points)  //DA
         }else {
             gameOverPopUp(isGameOver: false)
+
+            if let gameOverVC = storyboard?.instantiateViewController(withIdentifier: "gameoverViewcontroller")as? GameOverViewController {
+                gameOverVC.modalPresentationStyle = .fullScreen
+                gameOverVC.score = points // sends points value to gameOverViewController
+                present(gameOverVC, animated: true, completion: nil)
+            }
+        }
+            
+        else {
+           //  kanske lägga till liv här
+
         }
     }
    
