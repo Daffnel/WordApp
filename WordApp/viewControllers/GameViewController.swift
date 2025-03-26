@@ -27,16 +27,15 @@ class GameViewController: UIViewController {
     
     var timer: Timer?
     var totalTime = 10
+    var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // playSound(named: "clock-ticking",loops: -1)
         
         answerLabel.becomeFirstResponder()
         lifeLabel.text = "❤️❤️❤️"
         
         randomWord()
-        
         countdown()
         
     }
@@ -48,21 +47,25 @@ class GameViewController: UIViewController {
     }
     
     func randomWord() {
-        let dictionaryType = DictionaryType.sailing
-        let displayWord = words.getRandomEnglishWord(dictionaryType)
+        // Array that takes word from Dictonary
+        let dictionaryType: [DictionaryType] = [.sailing, .cooking, .nature, .computer, .simple]
+        let randomType = dictionaryType.randomElement() ?? .sailing
+        let displayWord = words.getRandomEnglishWord(randomType)
         
-        if let englishWord = displayWord?.english {
-            question = englishWord
-        } else {return
-        }
-        
-        if let swedishWord = displayWord?.swedish {
-            rightanswer = swedishWord
-        } else {return
-        }
-        
-        questionLabel.text = question
-        
+        if translateToSwedish {
+              // English to Swedish
+              if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
+                  question = englishWord
+                  rightanswer = swedishWord
+              }
+          } else {
+              // Swedish to English
+              if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
+                  question = swedishWord
+                  rightanswer = englishWord
+              }
+          }
+          questionLabel.text = question
     }
     
     func newRound(){
@@ -110,7 +113,7 @@ class GameViewController: UIViewController {
          self.timerLabel.text = String(self.totalTime)
          
          if self.totalTime <= 0 {
-            self.stopTickingSound() // stop loop and play times up sound
+            self.stopTickingSound() // stop sound loop and play times up sound
             self.playSound(named: "times-up")
             timer.invalidate()// Stop timer
             self.gameOver(DidLose: true) // Games over when time runs out
@@ -155,6 +158,7 @@ class GameViewController: UIViewController {
     
     func gameOver(DidLose: Bool){
         if DidLose{
+            
             if let gameOverVC = storyboard?.instantiateViewController(withIdentifier: "gameoverViewcontroller")as? GameOverViewController {
                 gameOverVC.modalPresentationStyle = .fullScreen
                 gameOverVC.score = points // sends points value to gameOverViewController
@@ -162,10 +166,6 @@ class GameViewController: UIViewController {
                 present(gameOverVC, animated: true, completion: nil)
                 HighScoreFunctions.writeToHighScoreList(score: points)
             }
-        }
-            
-        else {
-           //  kanske lägga till liv här
         }
     }
    
