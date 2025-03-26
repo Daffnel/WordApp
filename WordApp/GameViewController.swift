@@ -4,10 +4,12 @@
 //
 //  Created by David Kalitzki on 2025-03-25.
 //
-
+import AVFoundation
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UITextField!
@@ -21,6 +23,9 @@ class GameViewController: UIViewController {
     var rightanswer: String = ""
     var points: Int = 0
     
+    var timer: Timer?
+    var totalTime = 10
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,9 +38,10 @@ class GameViewController: UIViewController {
         
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
+        playSound()
         
         makeGuess()
-        
+        answerLabel.text = ""
     }
     
     func randomWord() {
@@ -56,14 +62,17 @@ class GameViewController: UIViewController {
         
     }
     
-    
+    func newRound(){
+        randomWord()
+        countdown()
+    }
     
     func makeGuess(){
         if answerLabel.text == rightanswer {
             print("Rätt!")
             points += 1
             pointsLabel.text = String(points)
-            
+            newRound()
             
         } else {
             print("Fel")
@@ -71,16 +80,25 @@ class GameViewController: UIViewController {
     }
     
     func countdown(){
-        let totalTime = 10
-        for i in 0...totalTime {
-            Timer.scheduledTimer(withTimeInterval: Double(i), repeats: false) { timer in
-                self.timerLabel.text = String(totalTime - i)
-            }
-            
-        }
-        
+     timer?.invalidate() // Stop previus timer
+     totalTime = 10
+     timerLabel.text = String(totalTime)
+     
+     timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+         self.totalTime -= 1
+         self.timerLabel.text = String(self.totalTime)
+         
+         if self.totalTime <= 0 {
+             timer.invalidate() // Stop timer
+             self.gameOver(DidLose: true) // Games over when time runs out
+         }
+     }
     }
+  
     
+    @IBAction func playAgainButton(_ sender: UIButton) {
+        restartGame()
+    }
     
     @IBAction func buttonhighScorepressed(_ sender: Any) {
         
@@ -90,5 +108,55 @@ class GameViewController: UIViewController {
             
         }  
     }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
+            print(" No sound found ")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }catch let error {
+            print("Faild to play sound: \(error) ")
+        }
+    }
+    
+    func gameOverPopUp(isGameOver: Bool){
+        let alertTitle = isGameOver ? "Game Over " : "Times up!"
+        let alertMessage = isGameOver ? "Better luck next Time! ": "You got \(points) points!"
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        
+        let actionTitle = isGameOver ? "OK" : "Play again"
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
+            
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+    }
+    
+    func goToStartScreen(){
+        if let startVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller"){
+            startVC.modalPresentationStyle = .fullScreen
+            present(startVC, animated: true, completion: nil)
+        }
+           
+    }
+    func restartGame(){
+        pointsLabel.text = "0"
+        randomWord()
+        countdown()
+        
+    }
+    func gameOver(DidLose: Bool){
+        if DidLose{
+            gameOverPopUp(isGameOver: true)
+        }else {
+            gameOverPopUp(isGameOver: false)
+        }
+    }
+   
     
 }
