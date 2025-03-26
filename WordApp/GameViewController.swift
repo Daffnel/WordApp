@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer?
     
+    @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UITextField!
     @IBOutlet weak var answerLabel: UITextField!
@@ -22,6 +23,7 @@ class GameViewController: UIViewController {
     var question: String = ""
     var rightanswer: String = ""
     var points: Int = 0
+    var lives: Int = 3
     
     var timer: Timer?
     var totalTime = 10
@@ -31,6 +33,7 @@ class GameViewController: UIViewController {
        // playSound(named: "clock-ticking",loops: -1)
         
         answerLabel.becomeFirstResponder()
+        lifeLabel.text = "❤️❤️❤️"
         
         randomWord()
         
@@ -76,7 +79,22 @@ class GameViewController: UIViewController {
             
         } else {
             print("Fel")
-            playSound(named: "clock-ticking", loops: -1)
+            lives -= 1
+            if lives == 2 {
+                lifeLabel.text = "❤️❤️"
+                newRound()
+                playSound(named: "clock-ticking", loops: -1)
+            }
+            if lives == 1 {
+                lifeLabel.text = "❤️"
+                newRound()
+                playSound(named: "clock-ticking", loops: -1)
+            }
+            if lives == 0 {
+                timer?.invalidate()
+                lifeLabel.text = ""
+                gameOver(DidLose: true)
+            }
         }
     }
     
@@ -140,6 +158,7 @@ class GameViewController: UIViewController {
             if let gameOverVC = storyboard?.instantiateViewController(withIdentifier: "gameoverViewcontroller")as? GameOverViewController {
                 gameOverVC.modalPresentationStyle = .fullScreen
                 gameOverVC.score = points // sends points value to gameOverViewController
+                gameOverVC.leftlives = lives
                 present(gameOverVC, animated: true, completion: nil)
             }
         }

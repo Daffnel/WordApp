@@ -229,6 +229,20 @@
                                     <segue destination="rAB-wZ-Lsq" kind="show" id="ZA1-aq-P7U"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATD-3U-B7L">
+                                <rect key="frame" x="37" y="25" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7h-Ow-NRI">
+                                <rect key="frame" x="21" y="18" width="84" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7i9-G0-d0J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -253,6 +267,7 @@
                     <connections>
                         <outlet property="answerLabel" destination="GqW-MV-3Rc" id="Qcz-RB-WVo"/>
                         <outlet property="buttonHighScore" destination="IFs-zY-rQi" id="NWd-v0-OAf"/>
+                        <outlet property="lifeLabel" destination="u7h-Ow-NRI" id="baq-5u-crI"/>
                         <outlet property="pointsLabel" destination="M8W-5e-99N" id="bia-d1-iCQ"/>
                         <outlet property="questionLabel" destination="0Tx-n4-bFl" id="Syh-NP-atj"/>
                         <outlet property="timerLabel" destination="3iC-MC-Rzb" id="gYC-vb-vpp"/>
@@ -289,19 +304,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best result is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1D-rS-c3m">
-                                <rect key="frame" x="113" y="450.33333333333331" width="167" height="25.333333333333314"/>
+                                <rect key="frame" x="113" y="365.33333333333331" width="167" height="25.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT5-au-Ocl">
-                                <rect key="frame" x="169" y="550.66666666666663" width="55" height="28"/>
+                                <rect key="frame" x="169" y="440.66666666666669" width="55" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-OC-R6A">
-                                <rect key="frame" x="145" y="708.66666666666663" width="103" height="35"/>
+                                <rect key="frame" x="145" y="668.66666666666663" width="103" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Play Again" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background">
@@ -314,20 +329,36 @@
                                     <action selector="playAgainButton:" destination="cz3-Mj-ZFy" eventType="touchUpInside" id="cuq-bC-Feu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE4-pA-9gv">
+                                <rect key="frame" x="172.66666666666666" y="565.66666666666663" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of your lives left:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yd-HI-wbF">
+                                <rect key="frame" x="78.333333333333329" y="518.66666666666663" width="236.33333333333343" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wJR-aH-xTd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sVP-9U-1a5" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="9Ow-77-8L3"/>
-                            <constraint firstItem="j48-OC-R6A" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="130" id="9xm-oV-OKQ"/>
+                            <constraint firstItem="j48-OC-R6A" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="200" id="DfC-dh-ueb"/>
+                            <constraint firstItem="aE4-pA-9gv" firstAttribute="top" secondItem="7yd-HI-wbF" secondAttribute="bottom" constant="20" id="QXp-zv-uWL"/>
+                            <constraint firstItem="7yd-HI-wbF" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="50" id="SHm-vg-imf"/>
                             <constraint firstItem="j48-OC-R6A" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="TIf-SO-Rnm"/>
                             <constraint firstItem="XyG-Sv-GCh" firstAttribute="top" secondItem="wJR-aH-xTd" secondAttribute="top" constant="30" id="eNm-fX-wFy"/>
-                            <constraint firstItem="O1D-rS-c3m" firstAttribute="top" secondItem="Va4-UA-YGV" secondAttribute="bottom" constant="125" id="hkw-aA-iXy"/>
+                            <constraint firstItem="7yd-HI-wbF" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="f85-Jy-mhn"/>
+                            <constraint firstItem="aE4-pA-9gv" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="gSP-Xu-Tp8"/>
                             <constraint firstItem="Va4-UA-YGV" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="jgh-pC-I3t"/>
+                            <constraint firstItem="O1D-rS-c3m" firstAttribute="top" secondItem="Va4-UA-YGV" secondAttribute="bottom" constant="40" id="moj-FK-Qvl"/>
                             <constraint firstItem="vT5-au-Ocl" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="ms6-hk-riG"/>
-                            <constraint firstItem="vT5-au-Ocl" firstAttribute="top" secondItem="O1D-rS-c3m" secondAttribute="bottom" constant="75" id="nSZ-P4-EQX"/>
                             <constraint firstItem="XyG-Sv-GCh" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="osD-qW-oXK"/>
                             <constraint firstItem="sVP-9U-1a5" firstAttribute="top" secondItem="XyG-Sv-GCh" secondAttribute="bottom" constant="50" id="rYH-SG-5nU"/>
+                            <constraint firstItem="vT5-au-Ocl" firstAttribute="top" secondItem="O1D-rS-c3m" secondAttribute="bottom" constant="50" id="raD-6m-9Ab"/>
                             <constraint firstItem="Va4-UA-YGV" firstAttribute="top" secondItem="sVP-9U-1a5" secondAttribute="bottom" constant="40" id="sc8-AT-HkQ"/>
                             <constraint firstItem="O1D-rS-c3m" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="wUt-m5-nEd"/>
                         </constraints>
@@ -335,6 +366,7 @@
                     <connections>
                         <outlet property="bestScoreLabel" destination="vT5-au-Ocl" id="ed0-2y-Yge"/>
                         <outlet property="poinstLabel" destination="Va4-UA-YGV" id="xgK-d4-6qB"/>
+                        <outlet property="usedLifeLabel" destination="aE4-pA-9gv" id="DDc-WJ-bFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaK-7s-CTL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
