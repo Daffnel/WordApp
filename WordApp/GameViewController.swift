@@ -74,11 +74,12 @@ class GameViewController: UIViewController {
         if answerLabel.text == rightanswer {
             print("Rätt!")
             points += 1
-            pointsLabel.text = String(points)
+            pointsLabel.text = String("\(points) points")
             newRound()
             
         } else {
             print("Fel")
+            minusPoints()
             lives -= 1
             if lives == 2 {
                 lifeLabel.text = "❤️❤️"
@@ -151,6 +152,15 @@ class GameViewController: UIViewController {
         pointsLabel.text = "0"
         randomWord()
         countdown()
+    }
+    
+    func minusPoints(){
+        if points > 0 {
+            points -= 1
+        } else {
+            points = 0
+        }
+        pointsLabel.text = "\(points) points"
     }
     
     func gameOver(DidLose: Bool){
