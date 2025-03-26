@@ -17,6 +17,7 @@ class HighScoreViewController: UIViewController,
     
     var highScore: [HighScoreFunctions] = HighScoreFunctions.readHighScoreList()
     
+    
   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
