@@ -141,6 +141,7 @@ class GameViewController: UIViewController {
                 gameOverVC.modalPresentationStyle = .fullScreen
                 gameOverVC.score = points // sends points value to gameOverViewController
                 present(gameOverVC, animated: true, completion: nil)
+                HighScoreFunctions.writeToHighScoreList(score: points)
             }
         }
             
