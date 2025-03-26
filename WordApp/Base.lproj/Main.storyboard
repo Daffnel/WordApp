@@ -229,21 +229,6 @@
                                     <segue destination="rAB-wZ-Lsq" kind="show" id="ZA1-aq-P7U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fL3-63-Nf0">
-                                <rect key="frame" x="157" y="634" width="79" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Restart" cornerStyle="dynamic">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="playAgainButton:" destination="pHp-ou-oUL" eventType="touchUpInside" id="dnY-V8-M1o"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7i9-G0-d0J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -276,6 +261,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kT-uK-hbB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1432.824427480916" y="487.32394366197184"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="4Rw-ca-O31">
+            <objects>
+                <viewController storyboardIdentifier="gameoverViewcontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cz3-Mj-ZFy" customClass="GameOverViewController" customModule="WordApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W4X-Er-pV3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameOver.png" translatesAutoresizingMaskIntoConstraints="NO" id="XyG-Sv-GCh">
+                                <rect key="frame" x="-315.66666666666669" y="89" width="1024.3333333333333" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2P8-p5-9sb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVP-9U-1a5">
+                                <rect key="frame" x="160" y="239" width="73" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va4-UA-YGV">
+                                <rect key="frame" x="176" y="305" width="41.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best result is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1D-rS-c3m">
+                                <rect key="frame" x="113" y="450.33333333333331" width="167" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT5-au-Ocl">
+                                <rect key="frame" x="169" y="550.66666666666663" width="55" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-OC-R6A">
+                                <rect key="frame" x="145" y="708.66666666666663" width="103" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play Again" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="cz3-Mj-ZFy" eventType="touchUpInside" id="cuq-bC-Feu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wJR-aH-xTd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sVP-9U-1a5" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="9Ow-77-8L3"/>
+                            <constraint firstItem="j48-OC-R6A" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="130" id="9xm-oV-OKQ"/>
+                            <constraint firstItem="j48-OC-R6A" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="TIf-SO-Rnm"/>
+                            <constraint firstItem="XyG-Sv-GCh" firstAttribute="top" secondItem="wJR-aH-xTd" secondAttribute="top" constant="30" id="eNm-fX-wFy"/>
+                            <constraint firstItem="O1D-rS-c3m" firstAttribute="top" secondItem="Va4-UA-YGV" secondAttribute="bottom" constant="125" id="hkw-aA-iXy"/>
+                            <constraint firstItem="Va4-UA-YGV" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="jgh-pC-I3t"/>
+                            <constraint firstItem="vT5-au-Ocl" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="ms6-hk-riG"/>
+                            <constraint firstItem="vT5-au-Ocl" firstAttribute="top" secondItem="O1D-rS-c3m" secondAttribute="bottom" constant="75" id="nSZ-P4-EQX"/>
+                            <constraint firstItem="XyG-Sv-GCh" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="osD-qW-oXK"/>
+                            <constraint firstItem="sVP-9U-1a5" firstAttribute="top" secondItem="XyG-Sv-GCh" secondAttribute="bottom" constant="50" id="rYH-SG-5nU"/>
+                            <constraint firstItem="Va4-UA-YGV" firstAttribute="top" secondItem="sVP-9U-1a5" secondAttribute="bottom" constant="40" id="sc8-AT-HkQ"/>
+                            <constraint firstItem="O1D-rS-c3m" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="wUt-m5-nEd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bestScoreLabel" destination="vT5-au-Ocl" id="ed0-2y-Yge"/>
+                        <outlet property="poinstLabel" destination="Va4-UA-YGV" id="xgK-d4-6qB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaK-7s-CTL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2550.3816793893129" y="677.46478873239437"/>
         </scene>
         <!--High Score View Controller-->
         <scene sceneID="IkV-dT-ULt">
@@ -357,6 +421,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GameOver.png" width="1024" height="260"/>
         <image name="WordApp-loggo.png" width="1024" height="301"/>
         <image name="face.smiling" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
