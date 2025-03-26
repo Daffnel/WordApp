@@ -153,6 +153,7 @@ class GameViewController: UIViewController {
     func gameOver(DidLose: Bool){
         if DidLose{
             gameOverPopUp(isGameOver: true)
+            HighScoreFunctions.writeToHighScoreList(score: points)  //DA
         }else {
             gameOverPopUp(isGameOver: false)
         }
