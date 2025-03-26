@@ -137,12 +137,6 @@ class GameViewController: UIViewController {
     
     func gameOver(DidLose: Bool){
         if DidLose{
-
-            gameOverPopUp(isGameOver: true)
-            HighScoreFunctions.writeToHighScoreList(score: points)  //DA
-        }else {
-            gameOverPopUp(isGameOver: false)
-
             if let gameOverVC = storyboard?.instantiateViewController(withIdentifier: "gameoverViewcontroller")as? GameOverViewController {
                 gameOverVC.modalPresentationStyle = .fullScreen
                 gameOverVC.score = points // sends points value to gameOverViewController
@@ -152,7 +146,6 @@ class GameViewController: UIViewController {
             
         else {
            //  kanske lägga till liv här
-
         }
     }
    
