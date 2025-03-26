@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8742DC3E2D933EB500C35547 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742DC3D2D933EB500C35547 /* HighScoreViewController.swift */; };
+		8742DC4A2D93704200C35547 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8742DC492D93704200C35547 /* File.txt */; };
 		876B61CA2D9219F300D0A2AD /* cooking.json in Resources */ = {isa = PBXBuildFile; fileRef = 876B61C92D9219DA00D0A2AD /* cooking.json */; };
 		876B61CC2D921ADD00D0A2AD /* sailing.json in Resources */ = {isa = PBXBuildFile; fileRef = 876B61CB2D921AD200D0A2AD /* sailing.json */; };
 		87CEEFD62D91D88900A7FBAC /* word.json in Resources */ = {isa = PBXBuildFile; fileRef = 87CEEFD52D91D87E00A7FBAC /* word.json */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8742DC3D2D933EB500C35547 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+		8742DC492D93704200C35547 /* File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		876B61C92D9219DA00D0A2AD /* cooking.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cooking.json; sourceTree = "<group>"; };
 		876B61CB2D921AD200D0A2AD /* sailing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sailing.json; sourceTree = "<group>"; };
 		87CEEFD52D91D87E00A7FBAC /* word.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = word.json; sourceTree = "<group>"; };
@@ -45,6 +49,10 @@
 		A4DAAAF82D9195BC00BC56D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4DAAAFA2D9195BC00BC56D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8742DC3F2D93507100C35547 /* Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Data; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A4DAAAE62D9195BB00BC56D3 /* Frameworks */ = {
@@ -89,13 +97,16 @@
 		A4DAAAEB2D9195BB00BC56D3 /* WordApp */ = {
 			isa = PBXGroup;
 			children = (
+				8742DC3F2D93507100C35547 /* Data */,
 				876B61C82D92197500D0A2AD /* dictionaries */,
 				A4DAAAEC2D9195BB00BC56D3 /* AppDelegate.swift */,
 				87CEEFD72D91D8B700A7FBAC /* Dictionary.swift */,
 				A4DAAAEE2D9195BB00BC56D3 /* SceneDelegate.swift */,
 				A4DAAAF02D9195BB00BC56D3 /* ViewController.swift */,
 				A4DAAAF22D9195BB00BC56D3 /* Main.storyboard */,
+				8742DC3D2D933EB500C35547 /* HighScoreViewController.swift */,
 				A4DAAAF52D9195BC00BC56D3 /* Assets.xcassets */,
+				8742DC492D93704200C35547 /* File.txt */,
 				A4DAAAF72D9195BC00BC56D3 /* LaunchScreen.storyboard */,
 				A4DAAAFA2D9195BC00BC56D3 /* Info.plist */,
 				8DA8F0432D92B26C00FD4CDC /* WordApp-loggo.png */,
@@ -119,6 +130,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8742DC3F2D93507100C35547 /* Data */,
 			);
 			name = WordApp;
 			productName = WordApp;
@@ -165,6 +179,7 @@
 			files = (
 				A4DAAAF92D9195BC00BC56D3 /* LaunchScreen.storyboard in Resources */,
 				87CEEFD62D91D88900A7FBAC /* word.json in Resources */,
+				8742DC4A2D93704200C35547 /* File.txt in Resources */,
 				A4DAAAF62D9195BC00BC56D3 /* Assets.xcassets in Resources */,
 				8DA8F0482D92D21300FD4CDC /* button-click.mp3 in Resources */,
 				876B61CC2D921ADD00D0A2AD /* sailing.json in Resources */,
@@ -184,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4DAAAF12D9195BB00BC56D3 /* ViewController.swift in Sources */,
+				8742DC3E2D933EB500C35547 /* HighScoreViewController.swift in Sources */,
 				87CEEFD82D91D8B700A7FBAC /* Dictionary.swift in Sources */,
 				A4DAAAED2D9195BB00BC56D3 /* AppDelegate.swift in Sources */,
 				8DA8F0462D92C03800FD4CDC /* AboutViewController.swift in Sources */,

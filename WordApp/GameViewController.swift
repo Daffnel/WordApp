@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var questionLabel: UITextField!
     @IBOutlet weak var answerLabel: UITextField!
     @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet var buttonHighScore: UIButton!
     
     var words = EnglishAndSwedishWord()
     
@@ -78,7 +79,16 @@ class GameViewController: UIViewController {
             
         }
         
+    }
+    
+    
+    @IBAction func buttonhighScorepressed(_ sender: Any) {
         
+       if let highScoreVC = storyboard?.instantiateViewController(withIdentifier: "highScoreViewController") {
+            highScoreVC.modalPresentationStyle = .fullScreen
+            present(highScoreVC, animated: true, completion: nil)
+            
+        }  
     }
     
 }
