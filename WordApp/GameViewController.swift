@@ -19,6 +19,8 @@ class GameViewController: UIViewController {
     @IBOutlet var buttonHighScore: UIButton!
     
     var words = EnglishAndSwedishWord()
+    var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
+
     
     var question: String = ""
     var rightanswer: String = ""
@@ -57,15 +59,20 @@ class GameViewController: UIViewController {
         } else {return
         }
         
-        if let englishWord = displayWord?.english {
-            question = englishWord
-        } else {return
-        }
-        
-        if let swedishWord = displayWord?.swedish {
-            rightanswer = swedishWord
-        } else {return
-        }
+        if translateToSwedish {
+                     // English to Swedish
+                     if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
+                         question = englishWord
+                         rightanswer = swedishWord
+                     }
+                 } else {
+                     // Swedish to English
+                     if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
+                         question = swedishWord
+                         rightanswer = englishWord
+                     }
+                 }
+
         
         questionLabel.text = question
         
@@ -77,7 +84,7 @@ class GameViewController: UIViewController {
     }
     
     func makeGuess(){
-        if answerLabel.text == rightanswer {
+        if answerLabel.text?.lowercased() == rightanswer.lowercased() {
             print("Rätt!")
             points += 1
             pointsLabel.text = String("\(points) points")
