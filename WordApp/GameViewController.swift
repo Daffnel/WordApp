@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var questionLabel: UITextField!
     @IBOutlet weak var answerLabel: UITextField!
     @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet var buttonHighScore: UIButton!
+  
     
     var words = EnglishAndSwedishWord()
     var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
