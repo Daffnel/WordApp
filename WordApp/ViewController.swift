@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var foodIcon: UIButton!
     
+    @IBOutlet weak var soundOnOff: UISwitch!
     
     var  words = EnglishAndSwedishWord()
     var translateToSwedish: Bool = true
@@ -41,6 +42,9 @@ class ViewController: UIViewController {
         swedishFlag.isUserInteractionEnabled = true
         swedishFlag.addGestureRecognizer(tapGesture)
         
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
+               soundOnOff.isOn = isSoundOn
+        
         
     }
     
@@ -57,17 +61,20 @@ class ViewController: UIViewController {
             gameVC.translateToSwedish = translateToSwedish // Send translation direction
             navigationController?.pushViewController(gameVC, animated: true)
         }
-        // let dictionaryType = DictionaryType.sailing
-        // let displayWord = words.getRandomEnglishWord(dictionaryType)
-        //    englishWordLabel.text =  displayWord?.english
-        
         performSegue(withIdentifier: segueId, sender: self)
-        
-        
     }
     
+    @IBAction func soundOnOff(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: "soundOn")
+    }
     
     func playSound() {
+        
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn") // sounds on
+        
+        if !isSoundOn {
+            return    // sounds off
+        }
         guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
             print(" No sound found ")
             return

@@ -36,7 +36,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // playSound(named: "clock-ticking",loops: -1)
         
         answerLabel.becomeFirstResponder()
         lifeLabel.text = "❤️❤️❤️"
@@ -68,14 +67,13 @@ class GameViewController: UIViewController {
                          question = englishWord
                          rightanswer = swedishWord
                      }
-                 } else {
-                     // Swedish to English
-                     if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
-                         question = swedishWord
-                         rightanswer = englishWord
-                     }
-                 }
-
+        } else {
+            // Swedish to English
+            if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
+                question = swedishWord
+                rightanswer = englishWord
+            }
+        }
         
         questionLabel.text = question
         
@@ -92,25 +90,21 @@ class GameViewController: UIViewController {
             print("Rätt!")
             points += 1
             pointsLabel.text = String("\(points) points")
-        
-            // show thumb up when right answer for 1 second
             showThumbsUp()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                       self.newRound()
-                   }
-            
+         
         } else {
             print("Fel")
             minusPoints()
             lives -= 1
+
             if lives == 2 {
                 lifeLabel.text = "❤️❤️"
-                newRound()
+                showThumbsDown()
                 playSound(named: "clock-ticking", loops: -1)
             }
             if lives == 1 {
                 lifeLabel.text = "❤️"
-                newRound()
+                showThumbsDown()
                 playSound(named: "clock-ticking", loops: -1)
             }
             if lives == 0 {
@@ -151,6 +145,11 @@ class GameViewController: UIViewController {
     }
     
     func playSound(named soundName: String, loops: Int = 0) {
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
+        if !isSoundOn{
+            return
+        }
+
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
             print(" No sound found ")
             return
@@ -195,14 +194,19 @@ class GameViewController: UIViewController {
                 HighScoreHandler.writeToHighScoreList(score: points)
             }
         }
-            
-        else {
-           //  kanske lägga till liv här
-        }
     }
     func showThumbsUp() {
-        thumbsUpLabel.text = "👍"  // Visa tummen
+        thumbsUpLabel.text = "👍"
+        // show thumb up when right answer for 0,5 second
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                   self.newRound()
+               }
+    }
+    func showThumbsDown(){
+        thumbsUpLabel.text = "👎"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                   self.newRound()
+               }
     }
   
-    
 }

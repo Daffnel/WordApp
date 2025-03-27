@@ -28,14 +28,17 @@ class GameOverViewController: UIViewController {
         
         usedLifeLabel.text = createLifeEmoji(lives: leftlives)
         
-        // lägg till highscore här!
-        bestScoreLabel.text = "points"
-        bestScoreLabel.font = UIFont.systemFont(ofSize: 30)
+        let highScores = HighScoreHandler.readHighScoreList()
         
+        if let highestScore = highScores.map({ $0.score }).max() {
+               bestScoreLabel.text = "\(highestScore) points"
+           } else {
+               bestScoreLabel.text = "No high scores yet"
+           }
+        bestScoreLabel.font = UIFont.systemFont(ofSize: 40)
 
     }
     
-
     @IBAction func playAgainButton(_ sender: UIButton) {
         playSound(named: "button-click")
         if let startVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller")  {
@@ -45,6 +48,12 @@ class GameOverViewController: UIViewController {
     }
     
     func playSound(named soundName: String) {
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundIn")
+        if !isSoundOn{
+            return
+        }
+
+        
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
             print(" No sound found ")
             return
