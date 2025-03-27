@@ -30,6 +30,8 @@ class GameViewController: UIViewController {
     var timer: Timer?
     var totalTime = 10
     
+    var dictionaryType: DictionaryType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        // playSound(named: "clock-ticking",loops: -1)
@@ -50,8 +52,12 @@ class GameViewController: UIViewController {
     }
     
     func randomWord() {
-        let dictionaryType = DictionaryType.sailing
-        let displayWord = words.getRandomEnglishWord(dictionaryType)
+        var displayWord: EnglishAndSwedishWord?
+        
+        if let dictionaryType = dictionaryType {
+            displayWord = words.getRandomEnglishWord(dictionaryType)
+        } else {return
+        }
         
         if translateToSwedish {
                      // English to Swedish
