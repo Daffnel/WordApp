@@ -136,7 +136,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="⛵️">
                                             <attributes>
-                                                <font key="NSFont" size="80" name=".AppleColorEmojiUI"/>
+                                                <font key="NSFont" metaFont="system" size="80"/>
                                                 <font key="NSOriginalFont" metaFont="system" size="80"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -158,7 +158,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="💻">
                                             <attributes>
-                                                <font key="NSFont" size="80" name=".AppleColorEmojiUI"/>
+                                                <font key="NSFont" metaFont="system" size="80"/>
                                                 <font key="NSOriginalFont" metaFont="system" size="80"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -180,7 +180,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="🌳">
                                             <attributes>
-                                                <font key="NSFont" size="80" name=".AppleColorEmojiUI"/>
+                                                <font key="NSFont" metaFont="system" size="80"/>
                                                 <font key="NSOriginalFont" metaFont="system" size="80"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -202,7 +202,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="🍔">
                                             <attributes>
-                                                <font key="NSFont" size="80" name=".AppleColorEmojiUI"/>
+                                                <font key="NSFont" metaFont="system" size="80"/>
                                                 <font key="NSOriginalFont" metaFont="system" size="80"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -312,20 +312,6 @@
                                     <action selector="buttonPressed:" destination="pHp-ou-oUL" eventType="touchUpInside" id="pZn-bi-lKC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFs-zY-rQi">
-                                <rect key="frame" x="140" y="704" width="113" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="zWl-ag-2dg"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Highscore">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="buttonhighScorepressed:" destination="pHp-ou-oUL" eventType="touchUpInside" id="wLo-UH-uZj"/>
-                                    <segue destination="rAB-wZ-Lsq" kind="show" id="ZA1-aq-P7U"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATD-3U-B7L">
                                 <rect key="frame" x="37" y="25" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -353,12 +339,9 @@
                         <constraints>
                             <constraint firstItem="3iC-MC-Rzb" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="6jV-sZ-Die"/>
                             <constraint firstItem="0Tx-n4-bFl" firstAttribute="top" secondItem="3iC-MC-Rzb" secondAttribute="bottom" constant="50" id="JHy-0C-UfO"/>
-                            <constraint firstItem="7i9-G0-d0J" firstAttribute="trailing" secondItem="IFs-zY-rQi" secondAttribute="trailing" constant="140" id="Pxj-JW-Ctq"/>
                             <constraint firstItem="0l3-Vb-vib" firstAttribute="top" secondItem="GqW-MV-3Rc" secondAttribute="bottom" constant="20" id="SS9-Od-QVm"/>
-                            <constraint firstItem="IFs-zY-rQi" firstAttribute="top" secondItem="0l3-Vb-vib" secondAttribute="bottom" constant="264" id="U0D-au-O9Z"/>
                             <constraint firstItem="M8W-5e-99N" firstAttribute="top" secondItem="7i9-G0-d0J" secondAttribute="top" constant="10" id="WIe-Lo-TeU"/>
                             <constraint firstItem="3iC-MC-Rzb" firstAttribute="top" secondItem="7i9-G0-d0J" secondAttribute="top" constant="100" id="Xan-RH-IU5"/>
-                            <constraint firstItem="IFs-zY-rQi" firstAttribute="leading" secondItem="7i9-G0-d0J" secondAttribute="leading" constant="140" id="jVa-N8-qHT"/>
                             <constraint firstItem="7i9-G0-d0J" firstAttribute="trailing" secondItem="M8W-5e-99N" secondAttribute="trailing" constant="10" id="jwb-PX-DsT"/>
                             <constraint firstItem="GqW-MV-3Rc" firstAttribute="top" secondItem="0Tx-n4-bFl" secondAttribute="bottom" constant="20" id="pMQ-Ys-lqs"/>
                             <constraint firstItem="0l3-Vb-vib" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="pfb-zz-q6J"/>
@@ -370,7 +353,6 @@
                     <navigationItem key="navigationItem" id="Prt-mD-zn0"/>
                     <connections>
                         <outlet property="answerLabel" destination="GqW-MV-3Rc" id="Qcz-RB-WVo"/>
-                        <outlet property="buttonHighScore" destination="IFs-zY-rQi" id="NWd-v0-OAf"/>
                         <outlet property="lifeLabel" destination="u7h-Ow-NRI" id="baq-5u-crI"/>
                         <outlet property="pointsLabel" destination="M8W-5e-99N" id="bia-d1-iCQ"/>
                         <outlet property="questionLabel" destination="0Tx-n4-bFl" id="Syh-NP-atj"/>
@@ -446,15 +428,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A65-nB-b2j">
+                                <rect key="frame" x="139" y="733" width="114" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="5aV-7d-YwO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="High Score" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonShowHighScore:" destination="cz3-Mj-ZFy" eventType="touchUpInside" id="yMZ-Bf-SZs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wJR-aH-xTd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wJR-aH-xTd" firstAttribute="trailing" secondItem="A65-nB-b2j" secondAttribute="trailing" constant="140" id="4Gl-9u-xDT"/>
                             <constraint firstItem="sVP-9U-1a5" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="9Ow-77-8L3"/>
                             <constraint firstItem="j48-OC-R6A" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="200" id="DfC-dh-ueb"/>
                             <constraint firstItem="aE4-pA-9gv" firstAttribute="top" secondItem="7yd-HI-wbF" secondAttribute="bottom" constant="20" id="QXp-zv-uWL"/>
                             <constraint firstItem="7yd-HI-wbF" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="50" id="SHm-vg-imf"/>
                             <constraint firstItem="j48-OC-R6A" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="TIf-SO-Rnm"/>
+                            <constraint firstItem="wJR-aH-xTd" firstAttribute="bottom" secondItem="A65-nB-b2j" secondAttribute="bottom" constant="50" id="ZTT-WU-Wck"/>
                             <constraint firstItem="XyG-Sv-GCh" firstAttribute="top" secondItem="wJR-aH-xTd" secondAttribute="top" constant="30" id="eNm-fX-wFy"/>
                             <constraint firstItem="7yd-HI-wbF" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="f85-Jy-mhn"/>
                             <constraint firstItem="aE4-pA-9gv" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="gSP-Xu-Tp8"/>
@@ -466,10 +466,12 @@
                             <constraint firstItem="vT5-au-Ocl" firstAttribute="top" secondItem="O1D-rS-c3m" secondAttribute="bottom" constant="50" id="raD-6m-9Ab"/>
                             <constraint firstItem="Va4-UA-YGV" firstAttribute="top" secondItem="sVP-9U-1a5" secondAttribute="bottom" constant="20" id="sc8-AT-HkQ"/>
                             <constraint firstItem="O1D-rS-c3m" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="wUt-m5-nEd"/>
+                            <constraint firstItem="A65-nB-b2j" firstAttribute="leading" secondItem="wJR-aH-xTd" secondAttribute="leading" constant="139" id="wo9-dW-IGz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bestScoreLabel" destination="vT5-au-Ocl" id="ed0-2y-Yge"/>
+                        <outlet property="highScoreButton" destination="A65-nB-b2j" id="H5r-em-xIU"/>
                         <outlet property="poinstLabel" destination="Va4-UA-YGV" id="xgK-d4-6qB"/>
                         <outlet property="usedLifeLabel" destination="aE4-pA-9gv" id="DDc-WJ-bFT"/>
                     </connections>
@@ -483,11 +485,11 @@
             <objects>
                 <viewController storyboardIdentifier="highScoreViewController" id="rAB-wZ-Lsq" customClass="HighScoreViewController" customModule="WordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bO-zq-ro6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vk4-Go-8XG">
-                                <rect key="frame" x="0.0" y="156" width="393" height="571"/>
+                                <rect key="frame" x="0.0" y="215" width="393" height="488"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" systemColor="systemRedColor"/>
                                 <prototypes>
@@ -539,10 +541,10 @@
                                 </connections>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="HighScore.png" translatesAutoresizingMaskIntoConstraints="NO" id="lxn-0Z-vJP">
-                                <rect key="frame" x="3" y="43" width="386" height="88"/>
+                                <rect key="frame" x="3" y="102" width="386" height="88"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 points or more to earn a star !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkJ-ak-iNa">
-                                <rect key="frame" x="34" y="133" width="324" height="21"/>
+                                <rect key="frame" x="34" y="192" width="324" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="324" id="czc-Op-Rka"/>
                                 </constraints>
@@ -551,7 +553,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50t-fa-vAb">
-                                <rect key="frame" x="159" y="758" width="75" height="35"/>
+                                <rect key="frame" x="159" y="734" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="home"/>
                                 <connections>
@@ -605,10 +607,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

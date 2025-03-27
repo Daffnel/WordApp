@@ -14,6 +14,7 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var usedLifeLabel: UILabel!
     @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var poinstLabel: UILabel!
+    @IBOutlet var highScoreButton: UIButton!
     
     var score: Int = 0 // receivs points from gameViewController
     var leftlives: Int = 0
@@ -70,4 +71,13 @@ class GameOverViewController: UIViewController {
         }
     }
    
+    @IBAction func buttonShowHighScore(_ sender: Any) {
+    
+            playSound(named: "button-click")
+           if let highScoreVC = storyboard?.instantiateViewController(withIdentifier: "highScoreViewController") {
+                highScoreVC.modalPresentationStyle = .fullScreen
+                present(highScoreVC, animated: true, completion: nil)
+                
+            }
+        }
 }
