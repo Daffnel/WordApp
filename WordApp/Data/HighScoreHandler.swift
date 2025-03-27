@@ -12,6 +12,8 @@ struct HighScoreHandler: Decodable, Encodable{
     let date: String
     let time: String
     let score: Int
+    
+    /**/
 
   
     /**
