@@ -7,13 +7,18 @@
 
 import Foundation
 
-struct HighScoreFunctions: Decodable, Encodable{
+struct HighScoreHandler: Decodable, Encodable{
     
     let date: String
     let time: String
     let score: Int
 
-    // Sätta upp alla fil parametrar kolla om vi har en highscore lista annars skapa en
+  
+    /**
+     Creates a url link to the highscore file, checks if the file exists, otherwise it is created.
+    
+     - Returns: url  link to saved high score file
+    */
     static func setFiles()-> URL{
         let fileManager = FileManager.default
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -27,9 +32,14 @@ struct HighScoreFunctions: Decodable, Encodable{
         return url
     }
     
+    /**
+     Creates the High score file.
+    
+     - Parameter url:  link to high score file
+     */
     static func makeHighscorefile(url: URL){
      
-        let emptyArray : [HighScoreFunctions] = [] //     // tom JSON struktur
+        let emptyArray : [HighScoreHandler] = [] //     // tom JSON struktur
 
         do {
             let data = try JSONEncoder().encode(emptyArray)
@@ -42,18 +52,27 @@ struct HighScoreFunctions: Decodable, Encodable{
         
     
     
+    /**
+     Reads an high score file as an JSON object, decodes it to object of HighScoreFunctions struct instance.
+     If the list exceeds 100 entries all old entrie over 100 is deleted.
     
-    
-    
-
-    static func readHighScoreList()->[HighScoreFunctions]{
+     - Returns: [HighScoreFunctions]
+     */
+    static func readHighScoreList()->[HighScoreHandler]{
         
         let url = setFiles()
         
            
         do {
             let data = try Data(contentsOf: url)
-            let highScore = try JSONDecoder().decode([HighScoreFunctions].self, from: data)
+            var highScore = try JSONDecoder().decode([HighScoreHandler].self, from: data)
+            
+            if highScore.count > 100{               //Blir listan längre än 100 poster ta bort den äldsta
+                for i in 0...(highScore.count - 100) {
+                highScore.remove(at: i)
+                }
+            }
+                
             return highScore
         }catch {
             print("fel vi avkodning \(error)")
@@ -61,8 +80,12 @@ struct HighScoreFunctions: Decodable, Encodable{
         }
    
     }
+    /**
+     Saves the high score list into an JSON file adds today's date and current time.
     
-    static func writeToHighScoreList(score: Int){
+     - Parameter score: number of points i game
+    */
+     static func writeToHighScoreList(score: Int){
         
         let url = setFiles()
         
@@ -79,17 +102,17 @@ struct HighScoreFunctions: Decodable, Encodable{
         
         
       
-        let score = HighScoreFunctions(date: date, time: time, score: score)
+        let score = HighScoreHandler(date: date, time: time, score: score)
         
-        var currentHighScoreList: [HighScoreFunctions] = []
+        var currentHighScoreList: [HighScoreHandler] = []
             
         //Läs in den nuvarande listan så att den skrivs över med nya värden
         
         do {
             let data = try Data(contentsOf: url)
-            currentHighScoreList = try JSONDecoder().decode([HighScoreFunctions].self, from: data)
+            currentHighScoreList = try JSONDecoder().decode([HighScoreHandler].self, from: data)
             } catch {
-                    print("listan skanas eller något anat knass")
+                    print("listan skanas eller något annat knass")
             }
         
         //lägg till nya poäng i listan
@@ -102,12 +125,29 @@ struct HighScoreFunctions: Decodable, Encodable{
                 print("Skriver till highscore")
                 print(currentHighScoreList)
             }catch {
-                print("Fel vi skrvining till highscore")
+                print("Fel vi skrivning till highscore")
             }
     }
+    /**
+     Sorts the highscore list by either highest score or by date.
+     
+    - Parameters:
+            - sortByDate: true, sorting by date else by score
+            - highscore: Array of type [HighScoreFunctions]
+    - Returns: Array of [HighScoreFunctions]
+    */
+    
+    static func sortHighScoreList(sortByDate: Bool, highScore: [HighScoreHandler]) -> [HighScoreHandler]{
         
+        var sortedHighScoreList: [HighScoreHandler]
         
-        
+        if(sortByDate){
+            sortedHighScoreList = highScore.sorted { $0.date > $1.date}
+        } else {
+             sortedHighScoreList = highScore.sorted {$0.score > $1.score}  //jämför första elemtet mot det andra
+            }
+        return sortedHighScoreList
+    }
     
     
 }
