@@ -302,9 +302,10 @@
                                     <constraint firstAttribute="height" constant="50" id="Q2d-oA-ms2"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="Translate">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -326,9 +327,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05W-eN-mIj">
-                                <rect key="frame" x="37" y="186" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05W-eN-mIj">
+                                <rect key="frame" x="167" y="190" width="59" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -337,11 +337,13 @@
                         <viewLayoutGuide key="safeArea" id="7i9-G0-d0J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="05W-eN-mIj" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="3uH-jB-Adz"/>
                             <constraint firstItem="3iC-MC-Rzb" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="6jV-sZ-Die"/>
                             <constraint firstItem="0Tx-n4-bFl" firstAttribute="top" secondItem="3iC-MC-Rzb" secondAttribute="bottom" constant="50" id="JHy-0C-UfO"/>
                             <constraint firstItem="0l3-Vb-vib" firstAttribute="top" secondItem="GqW-MV-3Rc" secondAttribute="bottom" constant="20" id="SS9-Od-QVm"/>
                             <constraint firstItem="M8W-5e-99N" firstAttribute="top" secondItem="7i9-G0-d0J" secondAttribute="top" constant="10" id="WIe-Lo-TeU"/>
                             <constraint firstItem="3iC-MC-Rzb" firstAttribute="top" secondItem="7i9-G0-d0J" secondAttribute="top" constant="100" id="Xan-RH-IU5"/>
+                            <constraint firstItem="05W-eN-mIj" firstAttribute="top" secondItem="7i9-G0-d0J" secondAttribute="top" constant="190" id="jf8-ey-8SX"/>
                             <constraint firstItem="7i9-G0-d0J" firstAttribute="trailing" secondItem="M8W-5e-99N" secondAttribute="trailing" constant="10" id="jwb-PX-DsT"/>
                             <constraint firstItem="GqW-MV-3Rc" firstAttribute="top" secondItem="0Tx-n4-bFl" secondAttribute="bottom" constant="20" id="pMQ-Ys-lqs"/>
                             <constraint firstItem="0l3-Vb-vib" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="pfb-zz-q6J"/>
@@ -437,6 +439,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="High Score" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -607,10 +610,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
