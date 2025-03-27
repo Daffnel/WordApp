@@ -95,7 +95,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c6i-MU-vLw"/>
-                                    <segue destination="pHp-ou-oUL" kind="show" id="N13-GN-Ywd"/>
+                                    <segue destination="pHp-ou-oUL" kind="show" identifier="startGameSegue" id="N13-GN-Ywd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-6r-0ir">
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="-183"/>
+            <point key="canvasLocation" x="-132" y="-179"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Si5-Ze-amJ">
