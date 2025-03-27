@@ -35,7 +35,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Back To Game" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" strokeWidth="2">
                                         <color key="backgroundColor" red="0.60298295449999995" green="0.60298295449999995" blue="0.60298295449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -89,7 +88,6 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Start Game" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" strokeWidth="2">
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -110,7 +108,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="About" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" strokeWidth="2">
                                         <color key="backgroundColor" red="0.60298295449999995" green="0.60298295449999995" blue="0.60298295449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -214,13 +211,13 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iu3-j8-7q3">
-                                <rect key="frame" x="264" y="781" width="51" height="31"/>
+                                <rect key="frame" x="53" y="781" width="51" height="31"/>
                                 <connections>
                                     <action selector="soundOnOff:" destination="BYZ-38-t0r" eventType="valueChanged" id="4W7-k1-tNl"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds ON/OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-4o-N92">
-                                <rect key="frame" x="80" y="786" width="123" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-4o-N92">
+                                <rect key="frame" x="20" y="786" width="23" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -238,6 +235,7 @@
                             <constraint firstItem="OWE-vI-2kO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="IcG-2T-dDg"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCX-RP-i5G"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tLF-Pe-ugE" secondAttribute="trailing" constant="100" id="NcS-Xi-XeH"/>
+                            <constraint firstItem="Iu3-j8-7q3" firstAttribute="leading" secondItem="Ci1-4o-N92" secondAttribute="trailing" constant="10" id="Ndw-gF-nXk"/>
                             <constraint firstItem="cfG-b8-ppr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OPG-x9-BPO"/>
                             <constraint firstItem="tLF-Pe-ugE" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="25" id="OvZ-Le-69y"/>
                             <constraint firstItem="PJp-lK-ybK" firstAttribute="top" secondItem="OWE-vI-2kO" secondAttribute="bottom" constant="25" id="SE1-0g-7Jr"/>
@@ -246,9 +244,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ci1-4o-N92" secondAttribute="bottom" constant="35" id="WeY-Ww-pMv"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="top" secondItem="PJp-lK-ybK" secondAttribute="bottom" constant="40" id="X6r-ZQ-MT5"/>
                             <constraint firstItem="OWE-vI-2kO" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="25" id="arK-Bq-juO"/>
-                            <constraint firstItem="Ci1-4o-N92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="ei3-yR-Uep"/>
+                            <constraint firstItem="Ci1-4o-N92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ei3-yR-Uep"/>
                             <constraint firstItem="PJp-lK-ybK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="o3s-sd-TJJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iu3-j8-7q3" secondAttribute="trailing" constant="80" id="t37-tF-hmr"/>
                             <constraint firstItem="cfG-b8-ppr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ygU-nK-FeS"/>
                         </constraints>
                     </view>
@@ -322,7 +319,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Translate">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -422,12 +418,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-OC-R6A">
-                                <rect key="frame" x="145" y="648.66666666666663" width="103" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="648.66666666666663" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AjI-eh-iPS"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Play Again" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -448,15 +446,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A65-nB-b2j">
-                                <rect key="frame" x="139" y="733" width="114" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="733" width="150" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="5aV-7d-YwO"/>
+                                    <constraint firstAttribute="width" constant="150" id="5aV-7d-YwO"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="High Score" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -468,12 +465,12 @@
                         <viewLayoutGuide key="safeArea" id="wJR-aH-xTd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wJR-aH-xTd" firstAttribute="trailing" secondItem="A65-nB-b2j" secondAttribute="trailing" constant="140" id="4Gl-9u-xDT"/>
                             <constraint firstItem="sVP-9U-1a5" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="9Ow-77-8L3"/>
                             <constraint firstItem="j48-OC-R6A" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="200" id="DfC-dh-ueb"/>
                             <constraint firstItem="aE4-pA-9gv" firstAttribute="top" secondItem="7yd-HI-wbF" secondAttribute="bottom" constant="20" id="QXp-zv-uWL"/>
                             <constraint firstItem="7yd-HI-wbF" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="50" id="SHm-vg-imf"/>
                             <constraint firstItem="j48-OC-R6A" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="TIf-SO-Rnm"/>
+                            <constraint firstItem="A65-nB-b2j" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="TKg-Gd-NqP"/>
                             <constraint firstItem="wJR-aH-xTd" firstAttribute="bottom" secondItem="A65-nB-b2j" secondAttribute="bottom" constant="50" id="ZTT-WU-Wck"/>
                             <constraint firstItem="XyG-Sv-GCh" firstAttribute="top" secondItem="wJR-aH-xTd" secondAttribute="top" constant="30" id="eNm-fX-wFy"/>
                             <constraint firstItem="7yd-HI-wbF" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="f85-Jy-mhn"/>
@@ -486,7 +483,6 @@
                             <constraint firstItem="vT5-au-Ocl" firstAttribute="top" secondItem="O1D-rS-c3m" secondAttribute="bottom" constant="50" id="raD-6m-9Ab"/>
                             <constraint firstItem="Va4-UA-YGV" firstAttribute="top" secondItem="sVP-9U-1a5" secondAttribute="bottom" constant="20" id="sc8-AT-HkQ"/>
                             <constraint firstItem="O1D-rS-c3m" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="wUt-m5-nEd"/>
-                            <constraint firstItem="A65-nB-b2j" firstAttribute="leading" secondItem="wJR-aH-xTd" secondAttribute="leading" constant="139" id="wo9-dW-IGz"/>
                         </constraints>
                     </view>
                     <connections>
