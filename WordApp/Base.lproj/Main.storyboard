@@ -76,11 +76,11 @@
             <objects>
                 <viewController storyboardIdentifier="viewcontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="WordApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-Zf-QbI">
-                                <rect key="frame" x="141.33333333333334" y="490" width="110.33333333333334" height="35"/>
+                                <rect key="frame" x="141.33333333333334" y="431" width="110.33333333333334" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="qXJ-mi-fpe"/>
                                 </constraints>
@@ -99,13 +99,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-6r-0ir">
-                                <rect key="frame" x="161" y="404" width="71" height="36"/>
+                                <rect key="frame" x="161" y="345" width="71" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ns-mf8">
-                                <rect key="frame" x="161.66666666666666" y="685" width="70" height="35"/>
+                                <rect key="frame" x="161.66666666666666" y="626" width="70" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="About" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" strokeWidth="2">
@@ -386,9 +386,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vk4-Go-8XG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vk4-Go-8XG">
                                 <rect key="frame" x="0.0" y="156" width="393" height="571"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="systemRedColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="highScoreCell" id="ZvG-PT-GrM">
                                         <rect key="frame" x="0.0" y="50" width="393" height="90.333335876464844"/>
@@ -429,6 +430,7 @@
                                                 <constraint firstItem="qRr-l7-dcW" firstAttribute="leading" secondItem="o1B-Xu-qZf" secondAttribute="leading" id="y0h-SA-Jkh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80911726799999995" green="0.80911726799999995" blue="0.80911726799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -448,13 +450,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50t-fa-vAb">
+                                <rect key="frame" x="159" y="758" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="home"/>
+                                <connections>
+                                    <action selector="buttonHome:" destination="rAB-wZ-Lsq" eventType="touchUpInside" id="EBw-op-85j"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="vNT-9C-OsC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KbL-KS-B9H"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.80911726799999995" green="0.80911726799999995" blue="0.80911726799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lxn-0Z-vJP" firstAttribute="top" secondItem="KbL-KS-B9H" secondAttribute="top" constant="43" id="AXC-WR-54b"/>
                             <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="vkJ-ak-iNa" secondAttribute="trailing" constant="35" id="D2w-dj-3Ki"/>
                             <constraint firstItem="KbL-KS-B9H" firstAttribute="bottom" secondItem="vk4-Go-8XG" secondAttribute="bottom" constant="115" id="D8t-jp-l4z"/>
+                            <constraint firstItem="50t-fa-vAb" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" constant="159" id="Nan-b1-F8n"/>
+                            <constraint firstItem="KbL-KS-B9H" firstAttribute="bottom" secondItem="50t-fa-vAb" secondAttribute="bottom" constant="49" id="Sp2-Xw-fp0"/>
+                            <constraint firstItem="50t-fa-vAb" firstAttribute="top" secondItem="vk4-Go-8XG" secondAttribute="bottom" constant="31" id="cEI-os-lyJ"/>
                             <constraint firstItem="vkJ-ak-iNa" firstAttribute="top" secondItem="lxn-0Z-vJP" secondAttribute="bottom" constant="2" id="cSd-wK-lwn"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="top" secondItem="KbL-KS-B9H" secondAttribute="top" constant="156" id="fK7-ze-ysa"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" id="glr-oJ-svI"/>
@@ -462,12 +476,14 @@
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="trailing" secondItem="KbL-KS-B9H" secondAttribute="trailing" id="nlS-Ii-y29"/>
                             <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="lxn-0Z-vJP" secondAttribute="trailing" constant="4" id="oNq-6i-17u"/>
                             <constraint firstItem="vkJ-ak-iNa" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" constant="34" id="pdP-Jj-Kiy"/>
+                            <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="50t-fa-vAb" secondAttribute="trailing" constant="159" id="qvh-RK-Y6u"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="top" secondItem="lxn-0Z-vJP" secondAttribute="bottom" constant="25" id="wd9-9h-Brf"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="top" secondItem="vkJ-ak-iNa" secondAttribute="bottom" constant="2" id="yLc-fk-vro"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FUa-2a-myx"/>
                     <connections>
+                        <outlet property="buttonHome" destination="50t-fa-vAb" id="rwh-Kv-SuJ"/>
                         <outlet property="tableView" destination="vk4-Go-8XG" id="2lO-Nh-ioh"/>
                     </connections>
                 </viewController>
@@ -481,11 +497,15 @@
         <image name="HighScore.png" width="386" height="98"/>
         <image name="WordApp-loggo.png" width="1024" height="301"/>
         <image name="face.smiling" catalog="system" width="128" height="123"/>
+        <image name="home" width="50" height="60"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

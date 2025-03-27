@@ -13,7 +13,7 @@ class HighScoreViewController: UIViewController,
                                UITableViewDelegate{
     
     @IBOutlet var tableView: UITableView!
-   
+    @IBOutlet var buttonHome: UIButton!
     
     var highScore: [HighScoreHandler] = HighScoreHandler.readHighScoreList()
     
@@ -51,6 +51,12 @@ class HighScoreViewController: UIViewController,
         
         return cell
     }
-    
-    
+    @IBAction func buttonHome(_ sender: Any) {
+        
+        if let homeVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller") {
+            homeVC.modalPresentationStyle = .fullScreen
+            present(homeVC, animated: true, completion: nil)
+        }
+        
+    }
 }
