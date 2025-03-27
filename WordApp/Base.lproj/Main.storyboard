@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-Zf-QbI">
-                                <rect key="frame" x="146" y="555" width="110.33333333333331" height="35"/>
+                                <rect key="frame" x="141.33333333333334" y="490" width="110.33333333333334" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="qXJ-mi-fpe"/>
                                 </constraints>
@@ -95,11 +95,9 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c6i-MU-vLw"/>
-                                    <segue destination="pHp-ou-oUL" kind="show" identifier="startGameSegue" id="N13-GN-Ywd"/>
+                                    <segue destination="pHp-ou-oUL" kind="show" id="N13-GN-Ywd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-6r-0ir">
-                                <rect key="frame" x="165.66666666666666" y="404" width="71" height="36"/>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-6r-0ir">
                                 <rect key="frame" x="161" y="404" width="71" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -107,13 +105,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC2-J0-dQ1">
-                                <rect key="frame" x="282" y="404" width="0.0" height="0.0"/>
+                                <rect key="frame" x="273" y="404" width="0.0" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ns-mf8">
-                                <rect key="frame" x="166" y="750" width="70" height="35"/>
+                                <rect key="frame" x="161.66666666666666" y="685" width="70" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="About" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" strokeWidth="2">
@@ -127,99 +125,39 @@
                                     <segue destination="72w-tQ-irE" kind="presentation" modalPresentationStyle="fullScreen" id="PF8-Zy-8tS"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WordApp-loggo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cfG-b8-ppr">
-                                <rect key="frame" x="-311" y="84" width="1024" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="WordApp-loggo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cfG-b8-ppr">
+                                <rect key="frame" x="36" y="75" width="318" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="lCA-NC-Ywh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wny-Bj-Qjf">
-                                <rect key="frame" x="80" y="470" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="1fl-lp-QEj"/>
-                                    <constraint firstAttribute="height" constant="45" id="oCR-Ng-y2j"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="⛵️"/>
-                                <connections>
-                                    <action selector="boatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYi-l9-2Dd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-1Z-xVR">
-                                <rect key="frame" x="145" y="470" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Ekb-g7-mA9"/>
-                                    <constraint firstAttribute="width" constant="45" id="u3U-ak-Ldk"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="💻"/>
-                                <connections>
-                                    <action selector="computerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtb-kb-66K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-Vb-3qo">
-                                <rect key="frame" x="210" y="470" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="sxf-82-GSU"/>
-                                    <constraint firstAttribute="height" constant="45" id="wcB-ig-0mP"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="🌳"/>
-                                <connections>
-                                    <action selector="natureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SfZ-sn-9CN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjX-jc-vn1">
-                                <rect key="frame" x="275" y="470" width="47" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="hLn-6d-GZt"/>
-                                    <constraint firstAttribute="width" constant="45" id="lfO-Ha-9Wl"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="🍔"/>
-                                <connections>
-                                    <action selector="foodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JqZ-AH-Kj1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CC2-J0-dQ1" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="220" id="79a-pY-E9X"/>
-                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="top" secondItem="Rue-1Z-xVR" secondAttribute="bottom" constant="40" id="7YE-2d-Wxt"/>
                             <constraint firstItem="P8M-Zf-QbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AXe-VO-6xY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CC2-J0-dQ1" secondAttribute="trailing" constant="120" id="CnT-SM-aIl"/>
                             <constraint firstItem="KsV-Ns-mf8" firstAttribute="top" secondItem="P8M-Zf-QbI" secondAttribute="bottom" constant="160" id="Ev0-ei-7hT"/>
                             <constraint firstItem="P8M-Zf-QbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FSO-k0-S4d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MjX-jc-vn1" secondAttribute="trailing" constant="80" id="G1x-vi-our"/>
-                            <constraint firstItem="wny-Bj-Qjf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="HVR-Uq-2rx"/>
-                            <constraint firstItem="wny-Bj-Qjf" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="30" id="JTO-Xh-Tho"/>
-                            <constraint firstItem="MjX-jc-vn1" firstAttribute="leading" secondItem="gdS-Vb-3qo" secondAttribute="trailing" constant="20" id="KxD-zV-JT9"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCX-RP-i5G"/>
                             <constraint firstItem="cfG-b8-ppr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OPG-x9-BPO"/>
                             <constraint firstItem="KsV-Ns-mf8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TaJ-GD-smw"/>
+                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="50" id="VXi-Rq-iCT"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="220" id="X6r-ZQ-MT5"/>
-                            <constraint firstItem="gdS-Vb-3qo" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="30" id="bPn-0l-c01"/>
-                            <constraint firstItem="Rue-1Z-xVR" firstAttribute="leading" secondItem="wny-Bj-Qjf" secondAttribute="trailing" constant="20" id="eIq-3L-XTj"/>
-                            <constraint firstItem="MjX-jc-vn1" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="30" id="heW-2s-0nf"/>
-                            <constraint firstItem="Rue-1Z-xVR" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="30" id="mdE-cJ-RiJ"/>
-                            <constraint firstItem="gdS-Vb-3qo" firstAttribute="leading" secondItem="Rue-1Z-xVR" secondAttribute="trailing" constant="20" id="qM0-yp-WZG"/>
+                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="top" secondItem="CC2-J0-dQ1" secondAttribute="bottom" constant="50" id="joK-C2-2N6"/>
                             <constraint firstItem="cfG-b8-ppr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ygU-nK-FeS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dEq-Ye-X5S"/>
                     <connections>
-                        <outlet property="boatIcon" destination="wny-Bj-Qjf" id="lik-e7-qjN"/>
-                        <outlet property="computerIcon" destination="Rue-1Z-xVR" id="Ewj-gN-k47"/>
                         <outlet property="englishFlag" destination="CC2-J0-dQ1" id="BDs-s9-B8A"/>
-                        <outlet property="foodIcon" destination="MjX-jc-vn1" id="qXV-VM-lKY"/>
-                        <outlet property="natureIcon" destination="gdS-Vb-3qo" id="8VM-9U-UL5"/>
                         <outlet property="swedishFlag" destination="Jm0-6r-0ir" id="mWg-j8-wlu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="-179"/>
+            <point key="canvasLocation" x="-86" y="-183"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Si5-Ze-amJ">
