@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        swedishFlag.text = " Choose translation direction"
+        swedishFlag.text = "🇬🇧  👉🏼  🇸🇪"
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flagTapped))
         swedishFlag.isUserInteractionEnabled = true
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
         }catch let error {
-            print("Faild to play sound: \(error) ")
+            print("Failed to play sound: \(error) ")
         }
     }
     @objc func flagTapped() {
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
         if translateToSwedish {
             swedishFlag.text = "🇬🇧  👉🏼  🇸🇪"
         } else {
-            swedishFlag.text = "🇸🇪  👉🏼  🇬🇧"
+            swedishFlag.text = "🇬🇧  👈🏼  🇸🇪"
         }
         
         // Save users choise
@@ -138,6 +138,8 @@ class ViewController: UIViewController {
         foodIcon.alpha = 1
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == segueId{
             
@@ -145,6 +147,7 @@ class ViewController: UIViewController {
                 GameViewController{
                 
                 destination.dictionaryType = dictionaryType
+                destination.translateToSwedish = translateToSwedish
                 
             }
         }
