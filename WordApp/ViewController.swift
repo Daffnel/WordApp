@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var swedishFlag: UILabel!
     
-   
+    @IBOutlet weak var boatIcon: UIButton!
+    
     var  words = EnglishAndSwedishWord()
     
     override func viewDidLoad() {
@@ -60,6 +61,23 @@ class ViewController: UIViewController {
             print("Faild to play sound: \(error) ")
         }
     }
+    
+    
+    @IBAction func boatButton(_ sender: UIButton) {
+        boatIcon.alpha = 0.5
+    }
+    
+    
+    @IBAction func computerButton(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func natureButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func foodButton(_ sender: UIButton) {
+    }
+    
     
 }
 
