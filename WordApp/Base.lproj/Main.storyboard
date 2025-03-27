@@ -151,7 +151,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="dEq-Ye-X5S"/>
                     <connections>
-                        <outlet property="englishFlag" destination="CC2-J0-dQ1" id="BDs-s9-B8A"/>
                         <outlet property="swedishFlag" destination="Jm0-6r-0ir" id="mWg-j8-wlu"/>
                     </connections>
                 </viewController>
@@ -250,6 +249,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05W-eN-mIj">
+                                <rect key="frame" x="37" y="186" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7i9-G0-d0J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -277,6 +283,7 @@
                         <outlet property="lifeLabel" destination="u7h-Ow-NRI" id="baq-5u-crI"/>
                         <outlet property="pointsLabel" destination="M8W-5e-99N" id="bia-d1-iCQ"/>
                         <outlet property="questionLabel" destination="0Tx-n4-bFl" id="Syh-NP-atj"/>
+                        <outlet property="thumbsUpLabel" destination="05W-eN-mIj" id="VUB-6M-0vj"/>
                         <outlet property="timerLabel" destination="3iC-MC-Rzb" id="gYC-vb-vpp"/>
                     </connections>
                 </viewController>

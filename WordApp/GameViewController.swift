@@ -11,6 +11,8 @@ class GameViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer?
     
+   
+    @IBOutlet weak var thumbsUpLabel: UILabel!
     @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UITextField!
@@ -36,6 +38,7 @@ class GameViewController: UIViewController {
         
         answerLabel.becomeFirstResponder()
         lifeLabel.text = "❤️❤️❤️"
+        thumbsUpLabel.text = ""
         
         randomWord()
         
@@ -73,6 +76,7 @@ class GameViewController: UIViewController {
     }
     
     func newRound(){
+        thumbsUpLabel.text = ""
         randomWord()
         countdown()
     }
@@ -82,7 +86,12 @@ class GameViewController: UIViewController {
             print("Rätt!")
             points += 1
             pointsLabel.text = String("\(points) points")
-            newRound()
+        
+            // show thumb up when right answer for 1 second
+            showThumbsUp()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                       self.newRound()
+                   }
             
         } else {
             print("Fel")
@@ -185,6 +194,9 @@ class GameViewController: UIViewController {
            //  kanske lägga till liv här
         }
     }
-   
+    func showThumbsUp() {
+        thumbsUpLabel.text = "👍"  // Visa tummen
+    }
+  
     
 }
