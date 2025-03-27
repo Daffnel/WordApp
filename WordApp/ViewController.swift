@@ -13,23 +13,23 @@ class ViewController: UIViewController {
     var audioPlayer: AVAudioPlayer?
     
     @IBOutlet var button: UIButton!
-    
     @IBOutlet weak var swedishFlag: UILabel!
-    
     @IBOutlet weak var boatIcon: UIButton!
-    
     @IBOutlet weak var computerIcon: UIButton!
-    
     @IBOutlet weak var natureIcon: UIButton!
-    
     @IBOutlet weak var foodIcon: UIButton!
-    
     @IBOutlet weak var soundOnOff: UISwitch!
+    @IBOutlet var sliderPlaytime: UISlider!
+    @IBOutlet var labelSliderPlaytime: UILabel!
+    
+    
+    
     
     var  words = EnglishAndSwedishWord()
     var translateToSwedish: Bool = true
     var dictionaryType: DictionaryType = .sailing
     let segueId = "startGameSegue"
+    var guesstime: Int = 0
     
     
     
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         if let gameVC = storyboard?.instantiateViewController(withIdentifier: "gameViewController") as? GameViewController {
             gameVC.translateToSwedish = translateToSwedish // Send translation direction
             navigationController?.pushViewController(gameVC, animated: true)
+            print(guesstime)
         }
         performSegue(withIdentifier: segueId, sender: self)
     }
@@ -151,8 +152,20 @@ class ViewController: UIViewController {
                 
             }
         }
-        
-        
     }
     
+    @IBAction func timeSlider(_ sender: Any) {
+        
+        sliderPlaytime.maximumValue = 120
+        sliderPlaytime.minimumValue = 1
+        sliderPlaytime.isContinuous = true
+        
+        let seconds = Int(round(sliderPlaytime.value))
+        
+        guesstime = seconds
+        
+        UserDefaults.standard.set(seconds, forKey: "gameTime")
+        labelSliderPlaytime.text = "\(seconds) seconds to guess"
+        
+    }
 }
