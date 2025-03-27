@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HighScoreFunctions: Decodable, Encodable{
+struct HighScoreHandler: Decodable, Encodable{
     
     let date: String
     let time: String
@@ -29,7 +29,7 @@ struct HighScoreFunctions: Decodable, Encodable{
     
     static func makeHighscorefile(url: URL){
      
-        let emptyArray : [HighScoreFunctions] = [] //     // tom JSON struktur
+        let emptyArray : [HighscoreHandler] = [] //     // tom JSON struktur
 
         do {
             let data = try JSONEncoder().encode(emptyArray)
