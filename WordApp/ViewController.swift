@@ -71,6 +71,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func boatButton(_ sender: UIButton) {
+        
+        
+        
         boatIcon.alpha = 1
         computerIcon.alpha = 0.3
         natureIcon.alpha = 0.3
