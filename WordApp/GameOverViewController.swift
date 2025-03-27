@@ -48,6 +48,12 @@ class GameOverViewController: UIViewController {
     }
     
     func playSound(named soundName: String) {
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundIn")
+        if !isSoundOn{
+            return
+        }
+
+        
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
             print(" No sound found ")
             return

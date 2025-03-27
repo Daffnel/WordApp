@@ -213,11 +213,24 @@
                                     <action selector="foodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4J-oG-Gh4"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iu3-j8-7q3">
+                                <rect key="frame" x="264" y="781" width="51" height="31"/>
+                                <connections>
+                                    <action selector="soundOnOff:" destination="BYZ-38-t0r" eventType="valueChanged" id="4W7-k1-tNl"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds ON/OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-4o-N92">
+                                <rect key="frame" x="80" y="786" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oTI-hX-pKD" secondAttribute="trailing" constant="100" id="4sr-cr-tC9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iu3-j8-7q3" secondAttribute="bottom" constant="30" id="73J-EN-66E"/>
                             <constraint firstItem="P8M-Zf-QbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AXe-VO-6xY"/>
                             <constraint firstItem="KsV-Ns-mf8" firstAttribute="top" secondItem="P8M-Zf-QbI" secondAttribute="bottom" constant="160" id="Ev0-ei-7hT"/>
                             <constraint firstItem="P8M-Zf-QbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FSO-k0-S4d"/>
@@ -230,9 +243,12 @@
                             <constraint firstItem="PJp-lK-ybK" firstAttribute="top" secondItem="OWE-vI-2kO" secondAttribute="bottom" constant="25" id="SE1-0g-7Jr"/>
                             <constraint firstItem="KsV-Ns-mf8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TaJ-GD-smw"/>
                             <constraint firstItem="P8M-Zf-QbI" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="50" id="VXi-Rq-iCT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ci1-4o-N92" secondAttribute="bottom" constant="35" id="WeY-Ww-pMv"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="top" secondItem="PJp-lK-ybK" secondAttribute="bottom" constant="40" id="X6r-ZQ-MT5"/>
                             <constraint firstItem="OWE-vI-2kO" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="25" id="arK-Bq-juO"/>
+                            <constraint firstItem="Ci1-4o-N92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="ei3-yR-Uep"/>
                             <constraint firstItem="PJp-lK-ybK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="o3s-sd-TJJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iu3-j8-7q3" secondAttribute="trailing" constant="80" id="t37-tF-hmr"/>
                             <constraint firstItem="cfG-b8-ppr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ygU-nK-FeS"/>
                         </constraints>
                     </view>
@@ -242,6 +258,7 @@
                         <outlet property="computerIcon" destination="tLF-Pe-ugE" id="sJC-a6-Ugd"/>
                         <outlet property="foodIcon" destination="oTI-hX-pKD" id="Kft-tw-xwT"/>
                         <outlet property="natureIcon" destination="PJp-lK-ybK" id="UCy-Iq-zK2"/>
+                        <outlet property="soundOnOff" destination="Iu3-j8-7q3" id="rEP-Jx-Go2"/>
                         <outlet property="swedishFlag" destination="Jm0-6r-0ir" id="mWg-j8-wlu"/>
                     </connections>
                 </viewController>

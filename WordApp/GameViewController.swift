@@ -145,6 +145,11 @@ class GameViewController: UIViewController {
     }
     
     func playSound(named soundName: String, loops: Int = 0) {
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
+        if !isSoundOn{
+            return
+        }
+
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
             print(" No sound found ")
             return
