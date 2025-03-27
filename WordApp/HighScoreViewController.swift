@@ -15,7 +15,7 @@ class HighScoreViewController: UIViewController,
     @IBOutlet var tableView: UITableView!
    
     
-    var highScore: [HighScoreFunctions] = HighScoreFunctions.readHighScoreList()
+    var highScore: [HighScoreHandler] = HighScoreHandler.readHighScoreList()
     
   
     
@@ -37,15 +37,11 @@ class HighScoreViewController: UIViewController,
         
         content.text = date
         
-        switch score{
-        case 0..<50:
-            content.image = UIImage(systemName: "cloud.rain")
-        case 50..<100:
-            content.image = UIImage(systemName: "cloud.sun")
-        case 100...:
-            content.image = UIImage(systemName: "sun.max")
+        switch score{    // mer än 10 poäng få en liten stjärna 
+        case 10...:
+            content.image = UIImage(named:  "silverStar")
         default:
-            content.image = UIImage(systemName: "face.smile")
+            content.image = UIImage(named: "emptyImage")
         }
         
         content.secondaryText = String("Antal poäng: \(score)")

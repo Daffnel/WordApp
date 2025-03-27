@@ -29,7 +29,7 @@ struct HighScoreHandler: Decodable, Encodable{
     
     static func makeHighscorefile(url: URL){
      
-        let emptyArray : [HighscoreHandler] = [] //     // tom JSON struktur
+        let emptyArray : [HighScoreHandler] = [] //     // tom JSON struktur
 
         do {
             let data = try JSONEncoder().encode(emptyArray)
@@ -46,14 +46,14 @@ struct HighScoreHandler: Decodable, Encodable{
     
     
 
-    static func readHighScoreList()->[HighScoreFunctions]{
+    static func readHighScoreList()->[HighScoreHandler]{
         
         let url = setFiles()
         
            
         do {
             let data = try Data(contentsOf: url)
-            let highScore = try JSONDecoder().decode([HighScoreFunctions].self, from: data)
+            let highScore = try JSONDecoder().decode([HighScoreHandler].self, from: data)
             return highScore
         }catch {
             print("fel vi avkodning \(error)")
@@ -79,15 +79,15 @@ struct HighScoreHandler: Decodable, Encodable{
         
         
       
-        let score = HighScoreFunctions(date: date, time: time, score: score)
+        let score = HighScoreHandler(date: date, time: time, score: score)
         
-        var currentHighScoreList: [HighScoreFunctions] = []
+        var currentHighScoreList: [HighScoreHandler] = []
             
         //Läs in den nuvarande listan så att den skrivs över med nya värden
         
         do {
             let data = try Data(contentsOf: url)
-            currentHighScoreList = try JSONDecoder().decode([HighScoreFunctions].self, from: data)
+            currentHighScoreList = try JSONDecoder().decode([HighScoreHandler].self, from: data)
             } catch {
                     print("listan skanas eller något anat knass")
             }
