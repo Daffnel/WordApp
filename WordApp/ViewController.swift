@@ -9,26 +9,38 @@ import AVFoundation
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     var audioPlayer: AVAudioPlayer?
-   
+    
     @IBOutlet var button: UIButton!
     
     @IBOutlet weak var swedishFlag: UILabel!
     
-   
+    @IBOutlet weak var boatIcon: UIButton!
+    
+    @IBOutlet weak var computerIcon: UIButton!
+    
+    @IBOutlet weak var natureIcon: UIButton!
+    
+    @IBOutlet weak var foodIcon: UIButton!
+    
+    
     var  words = EnglishAndSwedishWord()
     var translateToSwedish: Bool = true
+    var dictionaryType: DictionaryType = .sailing
+    let segueId = "startGameSegue"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         swedishFlag.text = " Choose translation direction"
-      
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flagTapped))
-                 swedishFlag.isUserInteractionEnabled = true
-                 swedishFlag.addGestureRecognizer(tapGesture)
-
+        swedishFlag.isUserInteractionEnabled = true
+        swedishFlag.addGestureRecognizer(tapGesture)
+        
         
     }
     
@@ -36,7 +48,7 @@ class ViewController: UIViewController {
         playSound()
         if let aboutVC = storyboard?.instantiateViewController(withIdentifier: "aboutViewController") {
             aboutVC.modalPresentationStyle = .fullScreen
-            present(aboutVC, animated: true, completion: nil) 
+            present(aboutVC, animated: true, completion: nil)
         }
     }
     @IBAction func buttonClick(_ sender: Any) {
@@ -45,11 +57,16 @@ class ViewController: UIViewController {
             gameVC.translateToSwedish = translateToSwedish // Send translation direction
             navigationController?.pushViewController(gameVC, animated: true)
         }
-       // let dictionaryType = DictionaryType.sailing
-       // let displayWord = words.getRandomEnglishWord(dictionaryType)
-    //    englishWordLabel.text =  displayWord?.english
+        // let dictionaryType = DictionaryType.sailing
+        // let displayWord = words.getRandomEnglishWord(dictionaryType)
+        //    englishWordLabel.text =  displayWord?.english
+        
+        performSegue(withIdentifier: segueId, sender: self)
+        
         
     }
+    
+    
     func playSound() {
         guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
             print(" No sound found ")
@@ -64,19 +81,68 @@ class ViewController: UIViewController {
         }
     }
     @objc func flagTapped() {
-           //Switch languege
-           translateToSwedish.toggle()
-           
-           // update label
-           if translateToSwedish {
-               swedishFlag.text = "🇬🇧  👉🏼  🇸🇪"
-           } else {
-               swedishFlag.text = "🇸🇪  👉🏼  🇬🇧"
-           }
-           
-           // Save users choise
-           UserDefaults.standard.set(translateToSwedish, forKey: "translationDirection")
-       }
- 
+        //Switch languege
+        translateToSwedish.toggle()
+        
+        // update label
+        if translateToSwedish {
+            swedishFlag.text = "🇬🇧  👉🏼  🇸🇪"
+        } else {
+            swedishFlag.text = "🇸🇪  👉🏼  🇬🇧"
+        }
+        
+        // Save users choise
+        UserDefaults.standard.set(translateToSwedish, forKey: "translationDirection")
+    }
+    
+    @IBAction func boatButton(_ sender: UIButton) {
+        dictionaryType = .sailing
+        
+        boatIcon.alpha = 1
+        computerIcon.alpha = 0.3
+        natureIcon.alpha = 0.3
+        foodIcon.alpha = 0.3
+    }
+    
+    @IBAction func computerButton(_ sender: UIButton) {
+        dictionaryType = .computer
+        
+        boatIcon.alpha = 0.3
+        computerIcon.alpha = 1
+        natureIcon.alpha = 0.3
+        foodIcon.alpha = 0.3
+    }
+    
+    @IBAction func natureButton(_ sender: UIButton) {
+        dictionaryType = .nature
+        
+        boatIcon.alpha = 0.3
+        computerIcon.alpha = 0.3
+        natureIcon.alpha = 1
+        foodIcon.alpha = 0.3
+    }
+    
+    @IBAction func foodButton(_ sender: UIButton) {
+        dictionaryType = .cooking
+        
+        boatIcon.alpha = 0.3
+        computerIcon.alpha = 0.3
+        natureIcon.alpha = 0.3
+        foodIcon.alpha = 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == segueId{
+            
+            if let destination = segue.destination as?
+                GameViewController{
+                
+                destination.dictionaryType = dictionaryType
+                
+            }
+        }
+        
+        
+    }
+    
 }
-

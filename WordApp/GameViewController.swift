@@ -22,6 +22,8 @@ class GameViewController: UIViewController {
     
     var words = EnglishAndSwedishWord()
     var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
+    var dictionaryType: DictionaryType?
+
 
     
     var question: String = ""
@@ -53,9 +55,13 @@ class GameViewController: UIViewController {
     }
     
     func randomWord() {
-        let dictionaryType = DictionaryType.sailing
-        let displayWord = words.getRandomEnglishWord(dictionaryType)
+        var displayWord: EnglishAndSwedishWord?
         
+        if let dictionaryType = dictionaryType {
+                    displayWord = words.getRandomEnglishWord(dictionaryType)
+                } else {return
+                }
+
         if translateToSwedish {
                      // English to Swedish
                      if let englishWord = displayWord?.english, let swedishWord = displayWord?.swedish {
