@@ -21,7 +21,8 @@ class GameViewController: UIViewController {
   
     
     var words = EnglishAndSwedishWord()
-    var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
+    var translateToSwedish: Bool = true
+//    var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
     var dictionaryType: DictionaryType?
 
 
