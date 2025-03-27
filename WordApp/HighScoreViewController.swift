@@ -12,54 +12,40 @@ class HighScoreViewController: UIViewController,
                                UITableViewDataSource,
                                UITableViewDelegate{
     
-    @IBOutlet var sortSwitch: UISwitch!
     @IBOutlet var tableView: UITableView!
-    
-    @IBOutlet var buttonHome: UIButton!
-    var highScore: [HighScoreHandler] = HighScoreHandler.readHighScoreList()
-    var sortedHighScoreList: [HighScoreHandler] = []
    
-
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-       
-            
-            sortedHighScoreList = HighScoreHandler.sortHighScoreList(sortByDate: false, highScore: highScore)
-        
-    }
-     
+    var highScore: [HighScoreFunctions] = HighScoreFunctions.readHighScoreList()
+    
+  
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
     
-        return  sortedHighScoreList.count
+       return  highScore.count
         
     }
     
-    
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-       
         
         let cell =  tableView.dequeueReusableCell(withIdentifier: "highScoreCell", for: indexPath)
         
-        let date = sortedHighScoreList[indexPath.row].date
-        let score = sortedHighScoreList[indexPath.row].score
+        let date = highScore[indexPath.row].date
+        let score = highScore[indexPath.row].score
         
         var content = cell.defaultContentConfiguration() // Hämtar default värden 'highScoreCell' kan innehålla 2 text och en bild
         
         content.text = date
         
-       //mer än 10 poäng vinn en silvestjärna
         switch score{
-        case 10...:
-            content.image = UIImage(named: "silverStar")
+        case 0..<50:
+            content.image = UIImage(systemName: "cloud.rain")
+        case 50..<100:
+            content.image = UIImage(systemName: "cloud.sun")
+        case 100...:
+            content.image = UIImage(systemName: "sun.max")
         default:
-            content.image = UIImage(named: "emptyImage")
+            content.image = UIImage(systemName: "face.smile")
         }
         
         content.secondaryText = String("Antal poäng: \(score)")
@@ -70,24 +56,5 @@ class HighScoreViewController: UIViewController,
         return cell
     }
     
-    @IBAction func sortedSwitchChanged(_ sender: UISwitch) {
-        if sender.isOn{
-            print("Switch på")
-            sortedHighScoreList = HighScoreHandler.sortHighScoreList(sortByDate: true, highScore: highScore)
-            tableView.reloadData()  // ladda om tabelvien
-        } else {
-            print("Switch av")
-            sortedHighScoreList = HighScoreHandler.sortHighScoreList(sortByDate: false, highScore: highScore)
-            tableView.reloadData()
-        }
-    }
-    
-    @IBAction func ButtonHome(_ sender: Any) {
-        if let homeVC = storyboard?.instantiateViewController(withIdentifier:"viewcontroller"){
-            homeVC.modalPresentationStyle = .fullScreen
-            present(homeVC, animated: true, completion: nil)
-        }
-        
-    }
     
 }
