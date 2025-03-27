@@ -170,7 +170,7 @@ class GameViewController: UIViewController {
                 gameOverVC.score = points // sends points value to gameOverViewController
                 gameOverVC.leftlives = lives
                 present(gameOverVC, animated: true, completion: nil)
-                HighScoreFunctions.writeToHighScoreList(score: points)
+                HighScoreHandler.writeToHighScoreList(score: points)
             }
         }
             
