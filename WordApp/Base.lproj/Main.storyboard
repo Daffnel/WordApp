@@ -143,7 +143,7 @@
                                     <action selector="boatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYi-l9-2Dd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-1Z-xVR">
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-1Z-xVR">
                                 <rect key="frame" x="145" y="470" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Ekb-g7-mA9"/>
@@ -155,7 +155,7 @@
                                     <action selector="computerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtb-kb-66K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-Vb-3qo">
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-Vb-3qo">
                                 <rect key="frame" x="210" y="470" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="sxf-82-GSU"/>
@@ -167,7 +167,7 @@
                                     <action selector="natureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SfZ-sn-9CN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjX-jc-vn1">
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjX-jc-vn1">
                                 <rect key="frame" x="275" y="470" width="47" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="hLn-6d-GZt"/>
@@ -208,7 +208,10 @@
                     <navigationItem key="navigationItem" id="dEq-Ye-X5S"/>
                     <connections>
                         <outlet property="boatIcon" destination="wny-Bj-Qjf" id="lik-e7-qjN"/>
+                        <outlet property="computerIcon" destination="Rue-1Z-xVR" id="Ewj-gN-k47"/>
                         <outlet property="englishFlag" destination="CC2-J0-dQ1" id="BDs-s9-B8A"/>
+                        <outlet property="foodIcon" destination="MjX-jc-vn1" id="qXV-VM-lKY"/>
+                        <outlet property="natureIcon" destination="gdS-Vb-3qo" id="8VM-9U-UL5"/>
                         <outlet property="swedishFlag" destination="Jm0-6r-0ir" id="mWg-j8-wlu"/>
                     </connections>
                 </viewController>

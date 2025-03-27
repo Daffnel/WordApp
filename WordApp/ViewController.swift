@@ -20,6 +20,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var boatIcon: UIButton!
     
+    @IBOutlet weak var computerIcon: UIButton!
+    
+    @IBOutlet weak var natureIcon: UIButton!
+    
+    @IBOutlet weak var foodIcon: UIButton!
+    
+    
     var  words = EnglishAndSwedishWord()
     
     override func viewDidLoad() {
@@ -64,18 +71,33 @@ class ViewController: UIViewController {
     
     
     @IBAction func boatButton(_ sender: UIButton) {
-        boatIcon.alpha = 0.5
+        boatIcon.alpha = 1
+        computerIcon.alpha = 0.3
+        natureIcon.alpha = 0.3
+        foodIcon.alpha = 0.3
     }
     
     
     @IBAction func computerButton(_ sender: UIButton) {
+        boatIcon.alpha = 0.3
+        computerIcon.alpha = 1
+        natureIcon.alpha = 0.3
+        foodIcon.alpha = 0.3
     }
     
     
     @IBAction func natureButton(_ sender: UIButton) {
+        boatIcon.alpha = 0.3
+        computerIcon.alpha = 0.3
+        natureIcon.alpha = 1
+        foodIcon.alpha = 0.3
     }
     
     @IBAction func foodButton(_ sender: UIButton) {
+        boatIcon.alpha = 0.3
+        computerIcon.alpha = 0.3
+        natureIcon.alpha = 1
+        foodIcon.alpha = 0.3
     }
     
     
