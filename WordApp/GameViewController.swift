@@ -33,10 +33,13 @@ class GameViewController: UIViewController {
     var lives: Int = 3
     
     var timer: Timer?
-    var totalTime = 10
+    var totalTime = UserDefaults.standard.integer(forKey: "gameTime")
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         answerLabel.becomeFirstResponder()
         lifeLabel.text = "❤️❤️❤️"
@@ -118,7 +121,8 @@ class GameViewController: UIViewController {
     
     func countdown(){
      timer?.invalidate() // Stop previus timer
-     totalTime = 10
+      //totalTime = 0
+       
      timerLabel.text = String(totalTime)
         
      playSound(named: "clock-ticking",loops: -1) // play sound in loop

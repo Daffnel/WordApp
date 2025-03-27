@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8M-Zf-QbI">
-                                <rect key="frame" x="141.33333333333334" y="461" width="110.33333333333334" height="35"/>
+                                <rect key="frame" x="141" y="577" width="110.33333333333331" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="qXJ-mi-fpe"/>
                                 </constraints>
@@ -103,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ns-mf8">
-                                <rect key="frame" x="161.66666666666666" y="656" width="70" height="35"/>
+                                <rect key="frame" x="161.33333333333334" y="656" width="70.333333333333343" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="About" cornerStyle="dynamic">
                                     <backgroundConfiguration key="background" strokeWidth="2">
@@ -222,17 +222,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mUy-df-E8T">
+                                <rect key="frame" x="51" y="469" width="299" height="31"/>
+                                <connections>
+                                    <action selector="timeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="6gl-2m-wT7"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kx-mJ-j9s">
+                                <rect key="frame" x="53" y="511" width="117" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="FYh-EY-AWn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oTI-hX-pKD" secondAttribute="trailing" constant="100" id="4sr-cr-tC9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iu3-j8-7q3" secondAttribute="bottom" constant="30" id="73J-EN-66E"/>
-                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AXe-VO-6xY"/>
-                            <constraint firstItem="KsV-Ns-mf8" firstAttribute="top" secondItem="P8M-Zf-QbI" secondAttribute="bottom" constant="160" id="Ev0-ei-7hT"/>
-                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FSO-k0-S4d"/>
+                            <constraint firstItem="9kx-mJ-j9s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="AAw-Is-PhY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KsV-Ns-mf8" secondAttribute="bottom" constant="151" id="BOk-DI-akm"/>
                             <constraint firstItem="oTI-hX-pKD" firstAttribute="top" secondItem="tLF-Pe-ugE" secondAttribute="bottom" constant="25" id="Gk1-Tg-Q3l"/>
                             <constraint firstItem="OWE-vI-2kO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="IcG-2T-dDg"/>
+                            <constraint firstItem="mUy-df-E8T" firstAttribute="leading" secondItem="9kx-mJ-j9s" secondAttribute="leading" id="JKz-OQ-eyc"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCX-RP-i5G"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tLF-Pe-ugE" secondAttribute="trailing" constant="100" id="NcS-Xi-XeH"/>
                             <constraint firstItem="Iu3-j8-7q3" firstAttribute="leading" secondItem="Ci1-4o-N92" secondAttribute="trailing" constant="10" id="Ndw-gF-nXk"/>
@@ -240,12 +255,19 @@
                             <constraint firstItem="tLF-Pe-ugE" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="25" id="OvZ-Le-69y"/>
                             <constraint firstItem="PJp-lK-ybK" firstAttribute="top" secondItem="OWE-vI-2kO" secondAttribute="bottom" constant="25" id="SE1-0g-7Jr"/>
                             <constraint firstItem="KsV-Ns-mf8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TaJ-GD-smw"/>
-                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="top" secondItem="Jm0-6r-0ir" secondAttribute="bottom" constant="50" id="VXi-Rq-iCT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ci1-4o-N92" secondAttribute="bottom" constant="35" id="WeY-Ww-pMv"/>
                             <constraint firstItem="Jm0-6r-0ir" firstAttribute="top" secondItem="PJp-lK-ybK" secondAttribute="bottom" constant="40" id="X6r-ZQ-MT5"/>
                             <constraint firstItem="OWE-vI-2kO" firstAttribute="top" secondItem="cfG-b8-ppr" secondAttribute="bottom" constant="25" id="arK-Bq-juO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mUy-df-E8T" secondAttribute="trailing" constant="45" id="byI-zO-98C"/>
+                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="dbT-Yg-tDE"/>
                             <constraint firstItem="Ci1-4o-N92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ei3-yR-Uep"/>
+                            <constraint firstItem="P8M-Zf-QbI" firstAttribute="top" secondItem="9kx-mJ-j9s" secondAttribute="bottom" constant="28" id="fdl-bD-eF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KsV-Ns-mf8" secondAttribute="trailing" constant="161.33333333333334" id="g30-4h-kQ6"/>
                             <constraint firstItem="PJp-lK-ybK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="o3s-sd-TJJ"/>
+                            <constraint firstItem="9kx-mJ-j9s" firstAttribute="top" secondItem="mUy-df-E8T" secondAttribute="bottom" constant="12" id="r0s-rz-1Cq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P8M-Zf-QbI" secondAttribute="bottom" constant="230" id="sLV-HB-GQo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P8M-Zf-QbI" secondAttribute="trailing" constant="141.66666666666669" id="vdc-Sv-Ohf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9kx-mJ-j9s" secondAttribute="trailing" constant="223" id="xmM-HL-88J"/>
                             <constraint firstItem="cfG-b8-ppr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ygU-nK-FeS"/>
                         </constraints>
                     </view>
@@ -254,7 +276,9 @@
                         <outlet property="boatIcon" destination="OWE-vI-2kO" id="QeU-aR-5lX"/>
                         <outlet property="computerIcon" destination="tLF-Pe-ugE" id="sJC-a6-Ugd"/>
                         <outlet property="foodIcon" destination="oTI-hX-pKD" id="Kft-tw-xwT"/>
+                        <outlet property="labelSliderPlaytime" destination="9kx-mJ-j9s" id="9EU-kn-d77"/>
                         <outlet property="natureIcon" destination="PJp-lK-ybK" id="UCy-Iq-zK2"/>
+                        <outlet property="sliderPlaytime" destination="mUy-df-E8T" id="q2N-rq-gyr"/>
                         <outlet property="soundOnOff" destination="Iu3-j8-7q3" id="rEP-Jx-Go2"/>
                         <outlet property="swedishFlag" destination="Jm0-6r-0ir" id="mWg-j8-wlu"/>
                     </connections>
@@ -623,10 +647,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
