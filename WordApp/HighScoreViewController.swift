@@ -8,36 +8,46 @@
 import Foundation
 import UIKit
 
+
 class HighScoreViewController: UIViewController,
                                UITableViewDataSource,
                                UITableViewDelegate{
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var buttonHome: UIButton!
+    @IBOutlet var buttonSortList: UIButton!
     
+    var sortedTurn: Bool = false
     var highScore: [HighScoreHandler] = HighScoreHandler.readHighScoreList()
+    var sortedHighScoreList: [HighScoreHandler] = []
     
-  
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       sortedHighScoreList = HighScoreHandler.sortHighScoreList(turn: sortedTurn, highScoreList: highScore)
+        tableView.reloadData()
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-    
-       return  highScore.count
+        return  sortedHighScoreList.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell =  tableView.dequeueReusableCell(withIdentifier: "highScoreCell", for: indexPath)
-        
-        let date = highScore[indexPath.row].date
-        let score = highScore[indexPath.row].score
+        let date = sortedHighScoreList[indexPath.row].date
+        let score = sortedHighScoreList[indexPath.row].score
         
         var content = cell.defaultContentConfiguration() // Hämtar default värden 'highScoreCell' kan innehålla 2 text och en bild
         
         content.text = date
         
-        switch score{    // mer än 10 poäng få en liten stjärna 
+        switch score{    // mer än 10 poäng få en liten stjärna
         case 10...:
             content.image = UIImage(named:  "silverStar")
         default:
@@ -51,12 +61,33 @@ class HighScoreViewController: UIViewController,
         
         return cell
     }
+    
+    // swipe left to remove a cell record
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+            
+        if editingStyle == .delete {
+            sortedHighScoreList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
     @IBAction func buttonHome(_ sender: Any) {
         
         if let homeVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller") {
             homeVC.modalPresentationStyle = .fullScreen
             present(homeVC, animated: true, completion: nil)
         }
-        
     }
+    @IBAction func buttonSortList(_ sender: Any) {
+    
+        sortedTurn.toggle()
+        viewDidLoad()
+    
+    }
+    
+    
+    
+    
 }

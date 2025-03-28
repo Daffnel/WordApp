@@ -40,11 +40,6 @@ struct HighScoreHandler: Decodable, Encodable{
             }
         }
         
-    
-    
-    
-    
-    
 
     static func readHighScoreList()->[HighScoreHandler]{
         
@@ -100,13 +95,19 @@ struct HighScoreHandler: Decodable, Encodable{
                 let data = try JSONEncoder().encode(currentHighScoreList)
                 try data.write(to: url)
                 print("Skriver till highscore")
-                print(currentHighScoreList)
             }catch {
                 print("Fel vi skrvining till highscore")
             }
     }
         
+    static func sortHighScoreList(turn: Bool,highScoreList: [HighScoreHandler]) -> [HighScoreHandler]{
         
+        if(turn){
+            return highScoreList.sorted{$0.score > $1.score}
+        }else {
+            return highScoreList.sorted{$0.date > $1.date}
+        }
+    }
         
     
     

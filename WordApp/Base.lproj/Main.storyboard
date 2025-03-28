@@ -592,8 +592,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-UZ-JoQ">
+                                <rect key="frame" x="46" y="731" width="144" height="84"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrows"/>
+                                <connections>
+                                    <action selector="buttonSortList:" destination="rAB-wZ-Lsq" eventType="touchUpInside" id="i6o-OM-WRv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50t-fa-vAb">
-                                <rect key="frame" x="159" y="734" width="75" height="35"/>
+                                <rect key="frame" x="252" y="737" width="74" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="home"/>
                                 <connections>
@@ -605,20 +613,20 @@
                         <viewLayoutGuide key="safeArea" id="KbL-KS-B9H"/>
                         <color key="backgroundColor" red="0.80911726799999995" green="0.80911726799999995" blue="0.80911726799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KbL-KS-B9H" firstAttribute="bottom" secondItem="50t-fa-vAb" secondAttribute="bottom" constant="7" id="3us-1n-P0J"/>
                             <constraint firstItem="lxn-0Z-vJP" firstAttribute="top" secondItem="KbL-KS-B9H" secondAttribute="top" constant="43" id="AXC-WR-54b"/>
                             <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="vkJ-ak-iNa" secondAttribute="trailing" constant="35" id="D2w-dj-3Ki"/>
                             <constraint firstItem="KbL-KS-B9H" firstAttribute="bottom" secondItem="vk4-Go-8XG" secondAttribute="bottom" constant="115" id="D8t-jp-l4z"/>
-                            <constraint firstItem="50t-fa-vAb" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" constant="159" id="Nan-b1-F8n"/>
-                            <constraint firstItem="KbL-KS-B9H" firstAttribute="bottom" secondItem="50t-fa-vAb" secondAttribute="bottom" constant="49" id="Sp2-Xw-fp0"/>
-                            <constraint firstItem="50t-fa-vAb" firstAttribute="top" secondItem="vk4-Go-8XG" secondAttribute="bottom" constant="31" id="cEI-os-lyJ"/>
+                            <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="50t-fa-vAb" secondAttribute="trailing" constant="67" id="X7I-RA-nOW"/>
                             <constraint firstItem="vkJ-ak-iNa" firstAttribute="top" secondItem="lxn-0Z-vJP" secondAttribute="bottom" constant="2" id="cSd-wK-lwn"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="top" secondItem="KbL-KS-B9H" secondAttribute="top" constant="156" id="fK7-ze-ysa"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" id="glr-oJ-svI"/>
                             <constraint firstItem="lxn-0Z-vJP" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" constant="3" id="jSD-Qw-STG"/>
+                            <constraint firstItem="WLe-UZ-JoQ" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" constant="46" id="jca-z9-imr"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="trailing" secondItem="KbL-KS-B9H" secondAttribute="trailing" id="nlS-Ii-y29"/>
                             <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="lxn-0Z-vJP" secondAttribute="trailing" constant="4" id="oNq-6i-17u"/>
                             <constraint firstItem="vkJ-ak-iNa" firstAttribute="leading" secondItem="KbL-KS-B9H" secondAttribute="leading" constant="34" id="pdP-Jj-Kiy"/>
-                            <constraint firstItem="KbL-KS-B9H" firstAttribute="trailing" secondItem="50t-fa-vAb" secondAttribute="trailing" constant="159" id="qvh-RK-Y6u"/>
+                            <constraint firstItem="KbL-KS-B9H" firstAttribute="bottom" secondItem="WLe-UZ-JoQ" secondAttribute="bottom" constant="3" id="vfe-nh-Nb8"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="top" secondItem="lxn-0Z-vJP" secondAttribute="bottom" constant="25" id="wd9-9h-Brf"/>
                             <constraint firstItem="vk4-Go-8XG" firstAttribute="top" secondItem="vkJ-ak-iNa" secondAttribute="bottom" constant="2" id="yLc-fk-vro"/>
                         </constraints>
@@ -626,6 +634,7 @@
                     <navigationItem key="navigationItem" id="FUa-2a-myx"/>
                     <connections>
                         <outlet property="buttonHome" destination="50t-fa-vAb" id="rwh-Kv-SuJ"/>
+                        <outlet property="buttonSortList" destination="WLe-UZ-JoQ" id="ZPL-nc-H6a"/>
                         <outlet property="tableView" destination="vk4-Go-8XG" id="2lO-Nh-ioh"/>
                     </connections>
                 </viewController>
@@ -638,6 +647,7 @@
         <image name="GameOver.png" width="1024" height="260"/>
         <image name="HighScore.png" width="386" height="98"/>
         <image name="WordApp-loggo.png" width="1024" height="301"/>
+        <image name="arrows" width="120" height="70"/>
         <image name="face.smiling" catalog="system" width="128" height="123"/>
         <image name="home" width="50" height="60"/>
         <systemColor name="labelColor">
