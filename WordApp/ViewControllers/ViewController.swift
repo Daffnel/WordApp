@@ -22,9 +22,6 @@ class ViewController: UIViewController {
     @IBOutlet var sliderPlaytime: UISlider!
     @IBOutlet var labelSliderPlaytime: UILabel!
     
-    
-    
-    
     var  words = EnglishAndSwedishWord()
     var translateToSwedish: Bool = true
     var dictionaryType: DictionaryType = .sailing
@@ -32,9 +29,6 @@ class ViewController: UIViewController {
     var guesstime: Int = 0
     let timerStartTime = 60
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +52,7 @@ class ViewController: UIViewController {
             present(aboutVC, animated: true, completion: nil)
         }
     }
+    
     @IBAction func buttonClick(_ sender: Any) {
         playSound()
         if let gameVC = storyboard?.instantiateViewController(withIdentifier: "gameViewController") as? GameViewController {
@@ -73,24 +68,27 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-        
+        // check if user wanted sound by switch
         let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn") // sounds on
         
         if !isSoundOn {
-            return    // sounds off
+            return   // sounds off
         }
+        // get sound if user wanted sound
         guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
             print(" No sound found ")
             return
         }
         
         do {
+            //play sound
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
         }catch let error {
             print("Failed to play sound: \(error) ")
         }
     }
+    
     @objc func flagTapped() {
         //Switch languege
         translateToSwedish.toggle()
@@ -108,7 +106,6 @@ class ViewController: UIViewController {
     
     @IBAction func boatButton(_ sender: UIButton) {
         dictionaryType = .sailing
-        
         boatIcon.alpha = 1
         computerIcon.alpha = 0.3
         natureIcon.alpha = 0.3
@@ -117,7 +114,6 @@ class ViewController: UIViewController {
     
     @IBAction func computerButton(_ sender: UIButton) {
         dictionaryType = .computer
-        
         boatIcon.alpha = 0.3
         computerIcon.alpha = 1
         natureIcon.alpha = 0.3
@@ -126,7 +122,6 @@ class ViewController: UIViewController {
     
     @IBAction func natureButton(_ sender: UIButton) {
         dictionaryType = .nature
-        
         boatIcon.alpha = 0.3
         computerIcon.alpha = 0.3
         natureIcon.alpha = 1
@@ -135,7 +130,6 @@ class ViewController: UIViewController {
     
     @IBAction func foodButton(_ sender: UIButton) {
         dictionaryType = .cooking
-        
         boatIcon.alpha = 0.3
         computerIcon.alpha = 0.3
         natureIcon.alpha = 0.3
@@ -149,10 +143,8 @@ class ViewController: UIViewController {
             
             if let destination = segue.destination as?
                 GameViewController{
-                
                 destination.dictionaryType = dictionaryType
                 destination.translateToSwedish = translateToSwedish
-                
             }
         }
     }

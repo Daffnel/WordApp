@@ -29,7 +29,7 @@ class GameOverViewController: UIViewController {
         usedLifeLabel.text = createLifeEmoji(lives: leftlives)
         
         let highScores = HighScoreHandler.readHighScoreList()
-        
+        // gets highest hihscore points from HighScoreHandler
         if let highestScore = highScores.map({ $0.score }).max() {
                bestScoreLabel.text = "\(highestScore) points"
            } else {
@@ -40,33 +40,33 @@ class GameOverViewController: UIViewController {
     }
     
     @IBAction func playAgainButton(_ sender: UIButton) {
-        playSound(named: "button-click")
+        playSound()
         if let startVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller")  {
             startVC.modalPresentationStyle = .fullScreen
             present(startVC, animated: true, completion: nil)
         }
     }
     
-    func playSound(named soundName: String) {
-        let isSoundOn = UserDefaults.standard.bool(forKey: "soundIn")
+    func playSound(){
+        // check if user wants sound or not
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
         if !isSoundOn{
+            return   // sounds off
+        }
+        // get sound
+        guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
+            print("Sound file not founf")
             return
         }
-
-        
-        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
-            print(" No sound found ")
-            return
-        }
-        
         do {
+            //play sound
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
         }catch let error {
             print("Faild to play sound: \(error) ")
         }
+        
     }
-    
     func createLifeEmoji(lives: Int) -> String {
         switch lives {
         case 3:
@@ -81,8 +81,7 @@ class GameOverViewController: UIViewController {
     }
    
     @IBAction func buttonShowHighScore(_ sender: Any) {
-    
-            playSound(named: "button-click")
+            playSound()
            if let highScoreVC = storyboard?.instantiateViewController(withIdentifier: "highScoreViewController") {
                 highScoreVC.modalPresentationStyle = .fullScreen
                 present(highScoreVC, animated: true, completion: nil)

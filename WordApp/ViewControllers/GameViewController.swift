@@ -10,8 +10,8 @@ import UIKit
 class GameViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer?
+    var timerAudioPlayer: AVAudioPlayer?
     
-   
     @IBOutlet weak var thumbsUpLabel: UILabel!
     @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -19,14 +19,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var answerLabel: UITextField!
     @IBOutlet weak var pointsLabel: UILabel!
   
-    
     var words = EnglishAndSwedishWord()
     var translateToSwedish: Bool = true
-//    var translateToSwedish = UserDefaults.standard.bool(forKey: "translationDirection")
     var dictionaryType: DictionaryType?
+    var isTimerSoundPlaying = false
 
-
-    
     var question: String = ""
     var rightanswer: String = ""
     var points: Int = 0
@@ -35,24 +32,19 @@ class GameViewController: UIViewController {
     var timer: Timer?
     var totalTime = UserDefaults.standard.integer(forKey: "gameTime")
   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         answerLabel.becomeFirstResponder()
         lifeLabel.text = "❤️❤️❤️"
         thumbsUpLabel.text = ""
         
         randomWord()
-        
         countdown()
         
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
         playSound(named: "button-click")
-        
         makeGuess()
         answerLabel.text = ""
     }
@@ -78,9 +70,7 @@ class GameViewController: UIViewController {
                 rightanswer = englishWord
             }
         }
-        
         questionLabel.text = question
-        
     }
     
     func newRound(){
@@ -104,28 +94,27 @@ class GameViewController: UIViewController {
             if lives == 2 {
                 lifeLabel.text = "❤️❤️"
                 showThumbsDown()
-                playSound(named: "clock-ticking", loops: -1)
+                playTimerSound()
             }
             if lives == 1 {
                 lifeLabel.text = "❤️"
                 showThumbsDown()
-                playSound(named: "clock-ticking", loops: -1)
+                playTimerSound()
             }
             if lives == 0 {
                 timer?.invalidate()
                 lifeLabel.text = ""
                 gameOver(DidLose: true)
+                stopTickingSound()
             }
         }
     }
     
     func countdown(){
      timer?.invalidate() // Stop previus timer
-      //totalTime = 0
-       
      timerLabel.text = String(totalTime)
         
-     playSound(named: "clock-ticking",loops: -1) // play sound in loop
+     playTimerSound() // play sound in loop
         
      timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
          self.totalTime -= 1
@@ -145,33 +134,53 @@ class GameViewController: UIViewController {
        if let highScoreVC = storyboard?.instantiateViewController(withIdentifier: "highScoreViewController") {
             highScoreVC.modalPresentationStyle = .fullScreen
             present(highScoreVC, animated: true, completion: nil)
-            
         }  
     }
-    
-    func playSound(named soundName: String, loops: Int = 0) {
+  
+    func playTimerSound() {
+        // check if user wants sound or not
         let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
         if !isSoundOn{
+            return  // sounds off
+        }
+        // get sound
+        guard let url = Bundle.main.url(forResource: "clock-ticking", withExtension: "mp3") else {
+            print("TimerSound missing")
             return
         }
-
-        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
-            print(" No sound found ")
-            return
-        }
-        
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.numberOfLoops = loops
-            audioPlayer?.play()
-        }catch let error {
-            print("Faild to play sound: \(error) ")
+            //play sound
+            timerAudioPlayer = try AVAudioPlayer(contentsOf: url)
+            timerAudioPlayer?.numberOfLoops = -1 // loops infinity
+            timerAudioPlayer?.play()
+        } catch let error {
+            print("could not play timer sound: \(error)")
         }
     }
-  
-    func stopTickingSound(){
-        audioPlayer?.stop()
-        audioPlayer = nil
+
+   func stopTickingSound(){
+       timerAudioPlayer?.stop()
+        timerAudioPlayer = nil
+    }
+    
+    func playSound(named soundName: String) {
+        // check if user wants sound or not
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
+        if !isSoundOn{
+            return   // sounds off
+        }
+        // get sound
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
+            print("sound is missing")
+            return
+        }
+        do {
+            // play sound
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+           audioPlayer?.play()
+        } catch let error {
+            print("could not play sound: \(error)")
+        }
     }
   
     func restartGame(){
@@ -200,6 +209,7 @@ class GameViewController: UIViewController {
             }
         }
     }
+    
     func showThumbsUp() {
         thumbsUpLabel.text = "👍"
         // show thumb up when right answer for 0,5 second
