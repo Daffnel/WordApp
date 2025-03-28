@@ -57,10 +57,11 @@ class ViewController: UIViewController {
         playSound()
         if let gameVC = storyboard?.instantiateViewController(withIdentifier: "gameViewController") as? GameViewController {
             gameVC.translateToSwedish = translateToSwedish // Send translation direction
+            gameVC.modalPresentationStyle = .fullScreen
             navigationController?.pushViewController(gameVC, animated: true)
             print(guesstime)
         }
-        performSegue(withIdentifier: segueId, sender: self)
+        //performSegue(withIdentifier: segueId, sender: self)
     }
     
     @IBAction func soundOnOff(_ sender: UISwitch) {
