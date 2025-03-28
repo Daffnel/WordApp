@@ -7,11 +7,14 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 
 class HighScoreViewController: UIViewController,
                                UITableViewDataSource,
                                UITableViewDelegate{
+    
+    var audioPlayer: AVAudioPlayer?
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var buttonHome: UIButton!
@@ -71,20 +74,40 @@ class HighScoreViewController: UIViewController,
         }
     }
     
-    
-    
     @IBAction func buttonHome(_ sender: Any) {
-        
+        playSound()
         if let homeVC = storyboard?.instantiateViewController(withIdentifier: "viewcontroller") {
             homeVC.modalPresentationStyle = .fullScreen
             present(homeVC, animated: true, completion: nil)
         }
     }
-    @IBAction func buttonSortList(_ sender: Any) {
     
+    @IBAction func buttonSortList(_ sender: Any) {
+        playSound()
         sortedTurn.toggle()
         viewDidLoad()
     
+    }
+    
+    func playSound(){
+        //check if user wants sound
+        let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
+        if !isSoundOn{
+            return  // sounds off
+        }
+        // get sound
+        guard let url = Bundle.main.url(forResource: "button-click", withExtension: "mp3") else {
+            print("Sound file not founf")
+            return
+        }
+        do {
+            // play sound
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }catch let error {
+            print("Faild to play sound: \(error) ")
+        }
+        
     }
     
     
