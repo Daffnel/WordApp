@@ -28,20 +28,6 @@
                                 <rect key="frame" x="38" y="84" width="300" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enm-qV-PKh">
-                                <rect key="frame" x="122" y="717" width="134" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back To Game" cornerStyle="dynamic">
-                                    <backgroundConfiguration key="background" strokeWidth="2">
-                                        <color key="backgroundColor" red="0.60298295449999995" green="0.60298295449999995" blue="0.60298295449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="backButton:" destination="72w-tQ-irE" eventType="touchUpInside" id="YZD-KH-aNa"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqO-g2-9F8">
                                 <rect key="frame" x="167" y="614" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,6 +42,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enm-qV-PKh">
+                                <rect key="frame" x="151" y="709" width="74" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="161" minY="168" maxX="378" maxY="371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Back-To-Game-2025-03-28" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" strokeWidth="0.0"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButton:" destination="72w-tQ-irE" eventType="touchUpInside" id="YZD-KH-aNa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oq5-M1-xZS"/>
                         <color key="backgroundColor" red="0.81630760729999996" green="0.81630760729999996" blue="0.81630760729999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -85,10 +84,8 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="tintColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Start Game" cornerStyle="dynamic">
-                                    <backgroundConfiguration key="background" strokeWidth="2">
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" image="Start-Game-2025-03-27" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" strokeWidth="2"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -103,12 +100,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ns-mf8">
-                                <rect key="frame" x="161.33333333333334" y="656" width="70.333333333333343" height="35"/>
+                                <rect key="frame" x="161.33333333333334" y="646" width="70.333333333333343" height="45"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="About" cornerStyle="dynamic">
-                                    <backgroundConfiguration key="background" strokeWidth="2">
-                                        <color key="backgroundColor" red="0.60298295449999995" green="0.60298295449999995" blue="0.60298295449999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" image="About-2025-03-27" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" strokeWidth="2"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -340,11 +335,8 @@
                                     <constraint firstAttribute="height" constant="50" id="Q2d-oA-ms2"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Translate">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Translate-2025-03-28">
+                                    <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonPressed:" destination="pHp-ou-oUL" eventType="touchUpInside" id="pZn-bi-lKC"/>
@@ -442,15 +434,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j48-OC-R6A">
-                                <rect key="frame" x="121.66666666666669" y="605.33333333333337" width="150" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="605.33333333333337" width="150" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="AjI-eh-iPS"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Play Again" cornerStyle="dynamic">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" image="Play-again" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -470,16 +460,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A65-nB-b2j">
-                                <rect key="frame" x="121.66666666666669" y="660.33333333333337" width="150" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="679.33333333333337" width="150" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="5aV-7d-YwO"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="High Score" cornerStyle="dynamic">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain" image="highscore" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonShowHighScore:" destination="cz3-Mj-ZFy" eventType="touchUpInside" id="yMZ-Bf-SZs"/>
@@ -644,11 +631,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="About-2025-03-27" width="85" height="31"/>
+        <image name="Back-To-Game-2025-03-28" width="189" height="43"/>
         <image name="GameOver.png" width="1024" height="260"/>
         <image name="HighScore.png" width="386" height="98"/>
+        <image name="Play-again" width="142" height="40"/>
+        <image name="Start-Game-2025-03-27" width="224" height="57"/>
+        <image name="Translate-2025-03-28" width="196" height="57"/>
         <image name="WordApp-loggo.png" width="1024" height="301"/>
         <image name="arrows" width="120" height="70"/>
         <image name="face.smiling" catalog="system" width="128" height="123"/>
+        <image name="highscore" width="142" height="38"/>
         <image name="home" width="50" height="60"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
