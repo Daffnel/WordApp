@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     var dictionaryType: DictionaryType = .sailing
     let segueId = "startGameSegue"
     var guesstime: Int = 0
+    let timerStartTime = 60
+
     
     
     
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         let isSoundOn = UserDefaults.standard.bool(forKey: "soundOn")
                soundOnOff.isOn = isSoundOn
         
+        initializeSlider()
         
     }
     
@@ -154,18 +157,23 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func timeSlider(_ sender: Any) {
+    @IBAction func timeSlider(_ sender: UISlider) {
         
-        sliderPlaytime.maximumValue = 120
-        sliderPlaytime.minimumValue = 1
-        sliderPlaytime.isContinuous = true
-        
-        let seconds = Int(round(sliderPlaytime.value))
+        let seconds = Int(round(sliderPlaytime.value / 5) * 5)
         
         guesstime = seconds
         
         UserDefaults.standard.set(seconds, forKey: "gameTime")
         labelSliderPlaytime.text = "\(seconds) seconds to guess"
         
+    }
+    
+    func initializeSlider(){
+        sliderPlaytime.maximumValue = 120
+        sliderPlaytime.minimumValue = 1
+        sliderPlaytime.isContinuous = true
+        sliderPlaytime.value = Float(timerStartTime)
+        labelSliderPlaytime.text = "\(timerStartTime) seconds to guess"
+
     }
 }
