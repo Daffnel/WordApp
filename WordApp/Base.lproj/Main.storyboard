@@ -19,7 +19,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-N3-WHB">
                                 <rect key="frame" x="76" y="224" width="240" height="370"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.81630760729999996" green="0.81630760729999996" blue="0.81630760729999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -58,7 +58,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oq5-M1-xZS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81630760729999996" green="0.81630760729999996" blue="0.81630760729999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="UJW-iG-F8m"/>
                     <connections>
@@ -239,7 +239,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81630760729999996" green="0.81630760729999996" blue="0.81630760729999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oTI-hX-pKD" secondAttribute="trailing" constant="100" id="4sr-cr-tC9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iu3-j8-7q3" secondAttribute="bottom" constant="30" id="73J-EN-66E"/>
@@ -372,7 +372,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7i9-G0-d0J"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81630760729999996" green="0.81630760729999996" blue="0.81630760729999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="05W-eN-mIj" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="3uH-jB-Adz"/>
                             <constraint firstItem="3iC-MC-Rzb" firstAttribute="centerX" secondItem="OYC-XS-e2U" secondAttribute="centerX" id="6jV-sZ-Die"/>
@@ -487,7 +487,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wJR-aH-xTd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81630760729999996" green="0.81630760729999996" blue="0.81630760729999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="sVP-9U-1a5" firstAttribute="centerX" secondItem="W4X-Er-pV3" secondAttribute="centerX" id="9Ow-77-8L3"/>
                             <constraint firstItem="j48-OC-R6A" firstAttribute="top" secondItem="vT5-au-Ocl" secondAttribute="bottom" constant="100" id="DfC-dh-ueb"/>
