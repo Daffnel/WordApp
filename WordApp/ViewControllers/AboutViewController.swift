@@ -23,7 +23,7 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         goodLuck.text = "Good Luck! ⭐️"
         aboutTextView.textColor = .black
-        aboutTextView.text = " You choose time for each game, and which direction you want to translate, English -> Swedish or Swedish -> English, you provide the correct translation within the time limit, you earn points and move on to the next word, if you fail to translate a word before time runs out, you lose one life and one point. Start the game with three lives, the game ends when you run out of lives, or time runs out and every word is correct. Try to get the highest score possible!"
+        aboutTextView.text = " You choose time for each game, minimum time is 10 seconds and  highest time is 120 seconds. You also can choose which direction you want to translate, English -> Swedish or Swedish -> English, you provide the correct translation within the time limit, you earn points and move on to the next word, if you fail to translate a word before time runs out, you lose one life and one point. Start the game with three lives, the game ends when you run out of lives, or time runs out and every word is correct. Try to get the highest score possible!"
        
         
     }
