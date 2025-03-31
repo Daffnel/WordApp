@@ -163,7 +163,7 @@ class ViewController: UIViewController {
     
     func initializeSlider(){
         sliderPlaytime.maximumValue = 120
-        sliderPlaytime.minimumValue = 1
+        sliderPlaytime.minimumValue = 10
         sliderPlaytime.isContinuous = true
         sliderPlaytime.value = Float(timerStartTime)
         labelSliderPlaytime.text = "\(timerStartTime) seconds to guess"
